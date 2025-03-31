@@ -1,9 +1,9 @@
 import "./App.css";
-
+import Detail from "./pages/detail";
 function App() {
   return (
     <>
-      <p className="text-red-500">homepage</p>
+      <Detail />
     </>
   );
 }
