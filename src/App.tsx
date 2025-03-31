@@ -7,6 +7,9 @@ function App() {
         header
       </div>
       <Detail />
+      <div className="w-full h-[100px] bg-red-100 text-center m-auto">
+        footer
+      </div>
     </>
   );
 }
