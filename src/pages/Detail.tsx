@@ -1,4 +1,4 @@
-import Carousel from "../components/swiper";
+import Carousel from "../components/Carousel";
 import PriceContent from "../components/PriceContent";
 import ProductDesctiption from "../components/ProductDescription";
 export default function Detail() {
