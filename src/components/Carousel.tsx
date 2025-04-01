@@ -8,8 +8,8 @@ const Carousel = () => {
   return (
     <>
       <div className="w-full">
-        <div className="flex justify-between items-center">
-          <p className="mb-[36px] font-bold text-[32px]">მსგავსი პროდუქტები</p>
+        <div className="flex justify-between items-center mb-[36px]">
+          <p className="font-bold text-[32px]">მსგავსი პროდუქტები</p>
           <p className="text-[14px] font-bold">ყველას ნახვა</p>
         </div>
         <Swiper

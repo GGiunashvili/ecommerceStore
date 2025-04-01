@@ -20,28 +20,16 @@ export default function ProductDescription() {
         <div className="max-w-[600px]">
           <p className="mb-[24px] font-bold text-[18px]">ზოგადი ინფორმაცია</p>
           <div className="flex mb-[16px] grid-cols-12 gap-x-[20px]">
-            <p className="font-medium text-[14px] col-span-6 w-full bg-purple-200">
-              ბრენდი
-            </p>
-            <p className="font-medium text-[14px] col-span-6 w-full bg-purple-200">
-              Apple
-            </p>
+            <p className="font-medium text-[14px] col-span-6 w-full">ბრენდი</p>
+            <p className="font-medium text-[14px] col-span-6 w-full">Apple</p>
           </div>
           <div className="flex mb-[16px] grid-cols-12 gap-x-[20px]">
-            <p className="font-medium text-[14px] col-span-6 w-full bg-purple-200">
-              ბრენდი
-            </p>
-            <p className="font-medium text-[14px] col-span-6 w-full bg-purple-200">
-              Apple
-            </p>
+            <p className="font-medium text-[14px] col-span-6 w-full">ბრენდი</p>
+            <p className="font-medium text-[14px] col-span-6 w-full">Apple</p>
           </div>{" "}
           <div className="flex mb-[16px] grid-cols-12 gap-x-[20px]">
-            <p className="font-medium text-[14px] col-span-6 w-full bg-purple-200">
-              ბრენდი
-            </p>
-            <p className="font-medium text-[14px] col-span-6 w-full bg-purple-200">
-              Apple
-            </p>
+            <p className="font-medium text-[14px] col-span-6 w-full">ბრენდი</p>
+            <p className="font-medium text-[14px] col-span-6 w-full">Apple</p>
           </div>
         </div>
       </div>

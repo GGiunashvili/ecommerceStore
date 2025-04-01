@@ -9,21 +9,21 @@ export default function Detail() {
     <>
       <div className="w-full max-w-[1440px] grid grid-cols-12 gap-x-[20px] mx-auto px-[32px] mt-[100px]">
         <DetailHeader />
-        <div className="col-span-12 md:col-span-9  bg-red-100 md:h-[500px]">
+        <div className="col-span-12 md:col-span-9 md:h-[500px]">
           <div className="flex flex-col md:flex-row gap-x-[20px]">
             <DetailCarousel />
             <ProductAbout />
           </div>
         </div>
-        <div className="col-span-12 md:col-span-3 bg-green-100">
+        <div className="col-span-12 md:col-span-3">
           <PriceContent />
         </div>
 
         <div className="col-span-12 md:col-span-9 w-full my-[60px]">
-          <div className="w-full bg-red-100  mb-[60px]">
+          <div className="w-full mb-[60px]">
             <Carousel />
           </div>
-          <div className="w-full bg-red-100 mb-[60px]">
+          <div className="w-full mb-[60px]">
             <ProductDesctiption />
           </div>
         </div>
