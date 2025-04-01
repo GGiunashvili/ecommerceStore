@@ -1,15 +1,25 @@
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import Detail from "./pages/Detail";
+import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 function App() {
   return (
     <>
-      <div className="w-full h-[100px] fixed top-0 bg-red-100 text-center m-auto z-9 border border-red-500">
-        <p> header</p>
-      </div>
-      <Detail />
-      <div className="w-full h-[100px] bg-red-100 text-center m-auto">
-        footer
-      </div>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <h1 className="fixed inset-0 flex items-center justify-center">
+              Home Page
+            </h1>
+          }
+        />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
     </>
   );
 }

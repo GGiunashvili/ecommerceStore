@@ -1,36 +1,36 @@
 export default function DetailCarousel() {
   return (
-    <div className="w-full flex gap-[20px]">
-      <div className="w-[180px] max-h-[320px] overflow-scroll flex flex-col gap-y-[20px]">
+    <div className="w-full flex flex-col-reverse md:flex-row gap-[20px]">
+      <div className="md:w-[180px] h-[100px] md:h-full md:max-h-[320px] overflow-scroll flex flex-row md:flex-col gap-[20px]">
         <img
           src="https://picsum.photos/600/300"
           alt="Random Test Image"
-          className="w-full"
+          className="w-auto md:w-full"
         />
         <img
           src="https://picsum.photos/600/300"
           alt="Random Test Image"
-          className="w-full"
+          className="w-auto md:w-full"
         />{" "}
         <img
           src="https://picsum.photos/600/300"
           alt="Random Test Image"
-          className="w-full"
+          className="w-auto md:w-full"
         />{" "}
         <img
           src="https://picsum.photos/600/300"
           alt="Random Test Image"
-          className="w-full"
+          className="w-auto md:w-full"
         />{" "}
         <img
           src="https://picsum.photos/600/300"
           alt="Random Test Image"
-          className="w-full"
+          className="w-auto md:w-full"
         />
         <img
           src="https://picsum.photos/600/300"
           alt="Random Test Image"
-          className="w-full"
+          className="w-auto md:w-full"
         />
       </div>
 
@@ -38,7 +38,7 @@ export default function DetailCarousel() {
         <img
           src="https://picsum.photos/600/300"
           alt="Random Test Image"
-          className="w-full"
+          className="w-auto md:w-full"
         />
       </div>
     </div>
