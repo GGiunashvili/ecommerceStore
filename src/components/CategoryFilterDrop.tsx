@@ -34,10 +34,10 @@ const CategoryFilterDrop = () => {
   }, []);
 
   return (
-    <div className="relative mb-10 mt-4 hidden min-w-[115px] justify-end md:flex">
+    <div className="relative mb-10 mt-4 min-w-[115px] justify-end ">
       <div>
         <h3
-          className="dropper mb-0 ml-10 hidden cursor-pointer items-center justify-end md:flex active"
+          className="dropper mb-0 ml-10 flex cursor-pointer items-center justify-end active"
           onClick={toggleDropdown}
         >
           <span className="mr-4 font-medium text-3 text-black">
@@ -55,25 +55,41 @@ const CategoryFilterDrop = () => {
         {isOpen && (
           <ul className="drop list-unstyled absolute right-0 z-8 mt-4 w-fit rounded-[12px] border border-dark-100 bg-white p-[12px] shadow-left active">
             <li
-              className="cursor-pointer text-[16px] px-[12px] flex justify-start font-semibold text-purple"
+              className={`cursor-pointer pt-[8px] px-[12px] font-medium text-[16px] ${
+                selectedOption === "განთავსების თარიღით"
+                  ? "text-purple-500"
+                  : "text-dark-700"
+              }`}
               onClick={() => handleOptionSelect("განთავსების თარიღით")}
             >
               განთავსების თარიღით
             </li>
             <li
-              className="cursor-pointer pt-[8px] px-[12px] font-medium text-[16px] text-dark-700"
+              className={`cursor-pointer pt-[8px] px-[12px] font-medium text-[16px] ${
+                selectedOption === "ფასი კლებადობით"
+                  ? "text-purple-500"
+                  : "text-dark-700"
+              }`}
               onClick={() => handleOptionSelect("ფასი კლებადობით")}
             >
               ფასი კლებადობით
             </li>
             <li
-              className="cursor-pointer pt-[8px] px-[12px] font-medium text-[16px] text-dark-700"
+              className={`cursor-pointer pt-[8px] px-[12px] font-medium text-[16px] ${
+                selectedOption === "ფასი ზრდადობით"
+                  ? "text-purple-500"
+                  : "text-dark-700"
+              }`}
               onClick={() => handleOptionSelect("ფასი ზრდადობით")}
             >
               ფასი ზრდადობით
             </li>
             <li
-              className="cursor-pointer pt-[8px] px-[12px] font-medium text-[16px] text-dark-700"
+              className={`cursor-pointer pt-[8px] px-[12px] font-medium text-[16px] ${
+                selectedOption === "ფასდაკლება"
+                  ? "text-purple-500"
+                  : "text-dark-700"
+              }`}
               onClick={() => handleOptionSelect("ფასდაკლება")}
             >
               ფასდაკლება
