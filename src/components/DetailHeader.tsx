@@ -8,7 +8,7 @@ export default function DetailHeader() {
 
       {/* სურვილების ღილაკი */}
       <div className="flex flex-col justify-center items-start md:items-end mt-4">
-        <button className="bg-gray-100 text-black px-4 py-2 rounded-lg mb-[24px]">
+        <button className="bg-gray-100 text-black px-4 py-2 rounded-full mb-[24px]">
           X სურვილების სიაში დამატება
         </button>
         {/* ID */}
