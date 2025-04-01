@@ -1,7 +1,12 @@
+import Carousel from "../components/Carousel";
+import HiroBannerSlider from "../components/HiroBannerSlider";
 export default function Home() {
   return (
-    <p className="flex items-center justify-center h-[calc(100vh-308px)] mt-[100px]">
-      home
-    </p>
+    <>
+      <div className="w-full max-w-[1440px] px-[32px] mx-auto flex flex-col items-center justify-center min-h-[calc(100vh-308px)] mt-[100px]">
+        <HiroBannerSlider />
+        <Carousel />
+      </div>
+    </>
   );
 }

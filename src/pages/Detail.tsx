@@ -20,7 +20,7 @@ export default function Detail() {
         </div>
 
         <div className="col-span-12 md:col-span-9 w-full my-[60px]">
-          <div className="w-full bg-red-100 h-[200px] mb-[60px]">
+          <div className="w-full bg-red-100  mb-[60px]">
             <Carousel />
           </div>
           <div className="w-full bg-red-100 mb-[60px]">
