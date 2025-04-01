@@ -3,19 +3,13 @@ import Detail from "./pages/Detail";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Home from "./pages/Home";
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <h1 className="fixed inset-0 flex items-center justify-center">
-              Home Page
-            </h1>
-          }
-        />
+        <Route path="/" element={<Home />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
