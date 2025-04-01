@@ -1,6 +1,6 @@
 export default function PriceContent() {
   return (
-    <div className="sticky top-0 max-w-sm mx-auto bg-white shadow-[0px_0px_16px_rgba(203,203,203,0.25)] rounded-[16px] p-4">
+    <div className="sticky top-[100px] max-w-sm mx-auto bg-white shadow-[0px_0px_16px_rgba(203,203,203,0.25)] rounded-[16px] p-4">
       <div className="flex items-center justify-around">
         <p className="text-black text-[30px] font-bold">3899.00 ₾</p>
         <p className="text-gray-500 line-through text-[16px]">3699.00 ₾</p>
