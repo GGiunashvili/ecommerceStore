@@ -6,7 +6,7 @@ export default function Header() {
       <div className="w-full max-w-[1440px] px-[32px] mx-auto flex justify-between items-center">
         <Link to="/" className="text-blue-500 underline">
           <div className="text-[24px] text-black font-bold">
-            <span>X</span> {/* You can replace "3" with your brand or logo */}
+            <span>X</span>
           </div>
         </Link>
         <input className="bg-purple-300 border border-black" type="text" />

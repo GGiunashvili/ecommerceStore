@@ -11,6 +11,10 @@ export default function Home() {
         <Link to="/detail" className="text-blue-500 underline">
           Go to Detail Page
         </Link>
+        <Link to="/Category" className="text-blue-500 underline">
+          Go to category Page
+        </Link>
+
         <HiroBannerSlider />
         <MultiBanner />
         <Carousel />

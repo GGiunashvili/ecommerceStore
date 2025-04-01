@@ -32,43 +32,33 @@ const Carousel = () => {
           }}
         >
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 1" /> */}
             <ProductCard />
           </SwiperSlide>
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 2" /> */}
             <ProductCard />
           </SwiperSlide>
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 3" /> */}
             <ProductCard />
           </SwiperSlide>
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 3" /> */}
             <ProductCard />
           </SwiperSlide>{" "}
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 3" /> */}
             <ProductCard />
           </SwiperSlide>{" "}
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 3" /> */}
             <ProductCard />
           </SwiperSlide>
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 3" /> */}
             <ProductCard />
           </SwiperSlide>{" "}
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 3" /> */}
             <ProductCard />
           </SwiperSlide>{" "}
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 3" /> */}
             <ProductCard />
           </SwiperSlide>{" "}
           <SwiperSlide>
-            {/* <img src="https://via.placeholder.com/600x300" alt="Slide 3" /> */}
             <ProductCard />
           </SwiperSlide>
         </Swiper>
