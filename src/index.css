@@ -1,2 +1,29 @@
 @import "tailwindcss";
 @import "font-awesome/css/font-awesome.min.css";
+
+/* Hide Swiper's default navigation arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none !important;
+}
+
+/* Custom Swiper button styles */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px !important;
+  height: 50px !important;
+  margin: auto !important;
+  text-align: center !important;
+  bottom: 0px !important;
+  top: 0px !important;
+  z-index: 8 !important;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  font-size: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+  margin: auto !important;
+  text-align: center !important;
+}

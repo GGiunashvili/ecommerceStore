@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="w-full mx-auto  bg-black text-white p-6">
-      <div className="w-full max-w-[1440px] px-[32px] mx-auto">
+      <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Links Section */}
           <div>
