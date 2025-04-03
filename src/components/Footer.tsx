@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="w-full mx-auto  bg-black text-white p-6">
+    <footer className="w-full mx-auto bg-black text-white p-6">
       <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Links Section */}
           <div>
             <h3 className="font-bold text-[12px] md:text-[16px] mb-4">
-              მიწოდება
+              Delivery
             </h3>
             <ul>
               <li>
@@ -14,7 +14,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  ბლოგი
+                  Blog
                 </a>
               </li>
               <li>
@@ -22,7 +22,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  ჩამოტვირთე აპლიკაცია
+                  Download App
                 </a>
               </li>
               <li>
@@ -30,7 +30,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  მიმდინარე შეთავაზებები
+                  Current Offers
                 </a>
               </li>
               <li>
@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Terms & Privacy Section */}
           <div>
             <h3 className="font-bold text-[12px] md:text-[16px] mb-4">
-              წესები & პირობები
+              Terms & Conditions
             </h3>
             <ul>
               <li>
@@ -55,7 +55,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  წესები & პირობები
+                  Terms & Conditions
                 </a>
               </li>
               <li>
@@ -63,7 +63,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  კონფიდენციალურობა
+                  Privacy Policy
                 </a>
               </li>
               <li>
@@ -71,7 +71,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  დაბრუნება
+                  Returns
                 </a>
               </li>
               <li>
@@ -79,7 +79,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  განვადება
+                  Installments
                 </a>
               </li>
               <li>
@@ -87,7 +87,7 @@ export default function Footer() {
                   href="#"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  გარანტია
+                  Warranty
                 </a>
               </li>
             </ul>
@@ -96,23 +96,27 @@ export default function Footer() {
           {/* Why Choose Us Section */}
           <div>
             <h3 className="font-bold text-[12px] md:text-[16px] mb-4">
-              რატომ x?
+              Why X?
             </h3>
             <ul>
               <li>
-                <span className="text-gray-400">უფასო მიწოდება ყველგან</span>
+                <span className="text-gray-400">Free delivery everywhere</span>
               </li>
               <li>
-                <span className="text-gray-400">თბილისში მიტანა 3 საათში</span>
+                <span className="text-gray-400">
+                  Delivery in Tbilisi within 3 hours
+                </span>
               </li>
               <li>
-                <span className="text-gray-400">მიტანის დროის არჩევანი</span>
+                <span className="text-gray-400">Choose delivery time</span>
               </li>
               <li>
-                <span className="text-gray-400">უფასო სასაჩუქრე შეფუთვა</span>
+                <span className="text-gray-400">Free gift wrapping</span>
               </li>
               <li>
-                <span className="text-gray-400">0% ეფექტური განვადება</span>
+                <span className="text-gray-400">
+                  0% interest installment plan
+                </span>
               </li>
             </ul>
           </div>
@@ -120,7 +124,7 @@ export default function Footer() {
           {/* Contact Section */}
           <div>
             <h3 className="font-bold text-[12px] md:text-[16px] mb-4">
-              კონტაქტი
+              Contact
             </h3>
             <ul>
               <li>
@@ -131,7 +135,7 @@ export default function Footer() {
                   href="mailto:support@x.store"
                   className="text-gray-400 hover:text-white font-medium text-[10px] md:text-[14px]"
                 >
-                  support@x.store
+                  Email: support@x.store
                 </a>
               </li>
             </ul>

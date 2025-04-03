@@ -4,9 +4,9 @@ const CategoryInput = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const filterOptions = [
-    { label: "ფასდაკლება", value: "discount" },
-    { label: "საჩუქარი", value: "gift" },
-    { label: "შეთავაზებები", value: "offer" },
+    { label: "Discount", value: "discount" },
+    { label: "Gift", value: "gift" },
+    { label: "Offers", value: "offer" },
   ];
 
   const handleSelectOption = (value: string) => {
@@ -15,8 +15,8 @@ const CategoryInput = () => {
 
   return (
     <div>
-      <h1>დაამატეთ ფილტრები</h1>
-      <ul className="drop list-unstyled   z-8 mt-4 w-fit rounded-[12px] border border-dark-100 bg-white p-[12px] shadow-left active">
+      <h1>Add Filters</h1>
+      <ul className="drop list-unstyled z-8 mt-4 w-fit rounded-[12px] border border-dark-100 bg-white p-[12px] shadow-left active">
         {filterOptions.map((option) => (
           <li
             key={option.value}
@@ -40,10 +40,10 @@ const CategoryInput = () => {
       </ul>
       <p>
         {selectedOption
-          ? `აირჩიეთ: ${
+          ? `Selected: ${
               filterOptions.find((opt) => opt.value === selectedOption)?.label
             }`
-          : "არ არის არჩეული"}
+          : "No option selected"}
       </p>
     </div>
   );

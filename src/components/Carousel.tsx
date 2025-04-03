@@ -10,8 +10,8 @@ const Carousel = () => {
     <>
       <div className="w-full">
         <div className="flex justify-between items-center mb-[36px]">
-          <p className="font-bold text-[32px]">მსგავსი პროდუქტები</p>
-          <p className="text-[14px] font-bold">ყველას ნახვა</p>
+          <p className="font-bold text-[32px]">Similar Products</p>
+          <p className="text-[14px] font-bold">see all</p>
         </div>
         <div className="w-full relative">
           <Swiper
@@ -32,7 +32,7 @@ const Carousel = () => {
                 slidesPerView: 3,
               },
               1200: {
-                slidesPerView: 5,
+                slidesPerView: 4,
               },
             }}
           >

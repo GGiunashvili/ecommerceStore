@@ -6,6 +6,7 @@ import {
   PermIdentity,
   Search,
 } from "@mui/icons-material";
+
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -14,8 +15,8 @@ export default function Header() {
       <header className="w-full fixed top-0 text-center m-auto z-10 bg-white text-white pb-4 shadow-[0px_2px_6px_rgba(0,0,0,0.08)] ">
         <div className="flex h-[36px] w-full items-center justify-center bg-purple-600 text-center mb-[12px]">
           <p className="font-semibold text-[10px] md:text-[12px] text-white">
-            თბილისის მასშტაბით მიტანა უფასოა. რეგიონებში სასურველ ნივთებს,
-            მინიმუმ 50 ლარის შეკვეთისას, უფასოდ მიიღებ
+            Free delivery within Tbilisi. Free delivery on orders of at least 50
+            GEL in regions.
           </p>
         </div>
         <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto mb-[12px] flex justify-between items-center">
@@ -24,7 +25,7 @@ export default function Header() {
               <span>LOGO</span>
             </div>
           </Link>
-          <div className="px-[32px] w-full hidden md:flex items-center overflow-hidden">
+          <div className="px-[16px] md:px-[32px] w-full hidden md:flex items-center overflow-hidden">
             <input
               data-cy="search_input"
               autoComplete="off"
@@ -32,7 +33,7 @@ export default function Header() {
               name="search"
               type="text"
               className="h-12 w-full text-ellipsis rounded-l-lg border-1 border-r-0 border-purple-600 pr-4 text-black outline-none pl-3"
-              placeholder="ძებნა..."
+              placeholder="Search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -41,7 +42,7 @@ export default function Header() {
               aria-label="Justify"
               className="border-1 border-purple-600 bg-purple-600 z-10 flex h-12 items-center justify-center rounded-r-lg px-4 font-medium text-white transition duration-300 hover:bg-purple-100 hover:text-purple"
             >
-              <Search style={{ fontSize: "24px" }} /> {/* Heart Icon */}
+              <Search style={{ fontSize: "24px" }} /> {/* Search Icon */}
             </button>
           </div>
           {/* Navigation */}
@@ -50,22 +51,23 @@ export default function Header() {
               href="#"
               className="flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
             >
-              <FavoriteBorder style={{ fontSize: "24px" }} /> {/* Heart Icon */}
-              <p className="text-[12px] hidden md:flex">რჩეულები</p>
+              <FavoriteBorder style={{ fontSize: "24px" }} />{" "}
+              {/* Favorite Icon */}
+              <p className="text-[12px] hidden md:flex">Favorites</p>
             </a>
             <a
               href="#"
               className="flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
             >
               <ShoppingCartCheckout style={{ fontSize: "24px" }} />{" "}
-              <p className="text-[12px] hidden md:flex">კალათა</p>
+              <p className="text-[12px] hidden md:flex">Basket</p>
             </a>
             <a
               href="#"
               className="flex text-black font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
             >
               <p className="text-[14px] mr-[8px] hidden md:flex text-black">
-                შესვლა
+                Login
               </p>
               <PermIdentity style={{ fontSize: "24px" }} /> {/* User Icon */}
             </a>
@@ -79,7 +81,7 @@ export default function Header() {
             name="search"
             type="text"
             className="h-12 w-full text-ellipsis rounded-l-lg border-1 border-r-0 border-purple-600 pr-4 text-black outline-none pl-3"
-            placeholder="ძებნა..."
+            placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -88,31 +90,34 @@ export default function Header() {
             aria-label="Justify"
             className="border-1 border-purple-600 bg-purple-600 z-10 flex h-12 items-center justify-center rounded-r-lg px-4 font-medium text-white transition duration-300 hover:bg-purple-100 hover:text-purple"
           >
-            <Search style={{ fontSize: "24px" }} /> {/* Heart Icon */}
+            <Search style={{ fontSize: "24px" }} /> {/* Search Icon */}
           </button>
         </div>
         <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto">
           <div className="w-full overflow-scroll flex gap-x-[40px] justify-start md:justify-center items-center">
             <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              ფასდაკლებები
+              Discounts
             </p>
             <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              სათამაშოები
+              Electronics
             </p>
             <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              სათამაშოები
+              Furniture & Home Decor
             </p>
             <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              ტექნიკა
+              Toys
             </p>
             <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              სათამაშოები
+              Electronics
             </p>
             <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              სახლი დეკორი ავეჯი
+              Furniture & Home Decor
             </p>
             <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              სილამაზე და თავის მოვლა
+              Electronics
+            </p>
+            <p className="text-black text-[14px] font-medium whitespace-nowrap">
+              Beauty & Personal Care
             </p>
           </div>
         </div>
