@@ -19,16 +19,16 @@ export default function Detail() {
           <PriceContent />
         </div>
 
-        <div className="col-span-12 md:col-span-9 w-full my-[60px]">
-          <div className="w-full mb-[60px]">
-            <Carousel />
-          </div>
+        <div className="col-span-12 md:col-span-8 w-full my-[60px]">
           <div className="w-full mb-[60px]">
             <ProductDesctiption />
           </div>
+          <div className="w-full mb-[60px]">
+            <Carousel />
+          </div>
         </div>
 
-        <div className="hidden md:col-span-3 w-full my-[60px]">33</div>
+        <div className="hidden md:col-span-4 w-full my-[60px]">33</div>
       </div>
     </>
   );

@@ -49,18 +49,24 @@ export default function Header() {
           <div className="flex justify-between items-center gap-x-[28px] md:gap-x-[32px] h-12 py-[4px]">
             <Link
               to="/Favorites"
-              className="flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
+              className="relative flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
             >
               <FavoriteBorder style={{ fontSize: "24px" }} />{" "}
               {/* Favorite Icon */}
               <p className="text-[12px] hidden md:flex">Favorites</p>
+              <p className="bg-red-500 text-[10px] flex items-center justify-center absolute top-[-4px] right-0 rounded-full text-white font-bold w-[18px] h-[18px]">
+                11
+              </p>
             </Link>
             <Link
               to="/Basket"
-              className="flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
+              className="relative flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
             >
               <ShoppingCartCheckout style={{ fontSize: "24px" }} />{" "}
               <p className="text-[12px] hidden md:flex">Basket</p>
+              <p className="bg-red-500 text-[10px] flex items-center justify-center absolute top-[-4px] right-0 rounded-full text-white font-bold w-[18px] h-[18px]">
+                11
+              </p>
             </Link>
             <a
               href="#"
