@@ -47,21 +47,21 @@ export default function Header() {
           </div>
           {/* Navigation */}
           <div className="flex justify-between items-center gap-x-[28px] md:gap-x-[32px] h-12 py-[4px]">
-            <a
-              href="#"
+            <Link
+              to="/Favorites"
               className="flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
             >
               <FavoriteBorder style={{ fontSize: "24px" }} />{" "}
               {/* Favorite Icon */}
               <p className="text-[12px] hidden md:flex">Favorites</p>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/Basket"
               className="flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
             >
               <ShoppingCartCheckout style={{ fontSize: "24px" }} />{" "}
               <p className="text-[12px] hidden md:flex">Basket</p>
-            </a>
+            </Link>
             <a
               href="#"
               className="flex items-center text-black font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
