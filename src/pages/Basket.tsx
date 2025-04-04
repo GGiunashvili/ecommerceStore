@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { ShoppingCartCheckout } from "@mui/icons-material";
+import BasketCard from "../components/BasketCard";
+import BasketPrise from "../components/BasketPrise";
+import Carousel from "../components/Carousel";
 export default function Basket() {
   return (
     <>
@@ -13,9 +16,28 @@ export default function Basket() {
           <p>Discounts</p>
           <Link to="/"> Home Page</Link>
         </div>
-      </div>
+      </div>{" "}
+      <div className="mt-[240px] md:mt-[180px] mb-[200px] w-full  max-w-[1200px] mx-auto">
+        <p className="mb-[20px] text-[18px] md:text-[24px] font-bold px-[16px] md:px-[32px]">
+          {" "}
+          You have 11 items in your cart
+        </p>
+        <div className="relative  w-full max-w-[1200px] px-[16px] md:px-[32px] grid grid-cols-12 gap-[20px] mx-auto ">
+          <div className="col-span-12 md:col-span-8  grid gap-y-[20px]">
+            <BasketCard />
+            <BasketCard />
+            <BasketCard />
+            <BasketCard />
+          </div>
+          <div className="col-span-12 md:col-span-4">
+            <BasketPrise />
+          </div>
 
-      <div className="mt-[300px]">basket</div>
+          <div className="col-span-12">
+            <Carousel />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
