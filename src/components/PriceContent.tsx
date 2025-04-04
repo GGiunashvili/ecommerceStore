@@ -1,3 +1,5 @@
+import { DateRange, LocalShipping } from "@mui/icons-material";
+
 export default function PriceContent() {
   return (
     <div className="sticky top-[100px] border-gray-300 border-t md:border-none  mx-auto bg-white md:shadow-[0px_0px_16px_rgba(203,203,203,0.25)] mt-[12px] md:mt-0 md:rounded-[16px] md:p-[20px]">
@@ -10,12 +12,14 @@ export default function PriceContent() {
         </p>
       </div>
 
-      <p className="text-gray-700 text-sm text-left mt-2">
-        Monthly: <span className="font-bold">148$-from</span> 0%
+      <p className=" text-sm text-left mt-2">
+        <DateRange style={{ fontSize: "24px" }} /> Monthly:{" "}
+        <span className="font-bold">148$-from</span> 0%
       </p>
 
-      <p className="text-blue-600 text-sm text-left mt-2">
-        Free delivery <span className="font-bold">within 3 hours</span>
+      <p className="text-sm text-left mt-2">
+        <LocalShipping style={{ fontSize: "24px" }} /> Free delivery{" "}
+        <span className="font-bold text-blue-600">within 3 hours</span>
       </p>
 
       <div className="flex flex-col gap-[12px] mt-4">

@@ -1,3 +1,4 @@
+import { FavoriteBorder } from "@mui/icons-material";
 export default function DetailHeader() {
   return (
     <div className="col-span-12 w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-[24px] md:mb-[60px]">
@@ -9,7 +10,8 @@ export default function DetailHeader() {
       {/* სურვილების ღილაკი */}
 
       <button className="bg-gray-100 text-black px-4 py-2 rounded-full">
-        X Add to Wishlist
+        <FavoriteBorder style={{ fontSize: "24px" }} />{" "}
+        <span className="ml-[6px]">Add to Wishlist</span>
       </button>
     </div>
   );

@@ -3,12 +3,14 @@ import HiroBannerSlider from "../components/HiroBannerSlider";
 import MultiBanner from "../components/MultiBanner";
 import { Link } from "react-router-dom";
 import DoubleBanner from "../components/DoubleBanner";
+import Authorization from "../components/Authorization";
 
 export default function Home() {
   return (
     <>
       {/* mt-[100px]  */}
-      <div className="w-full max-w-[1200px] px-[16px] md:px-[16px] md:px-[32px] mx-auto flex gap-y-[80px] flex-col items-center justify-center min-h-[calc(100vh-308px)] mb-[80px] mt-[180px]">
+      <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto flex gap-y-[80px] flex-col items-center justify-center min-h-[calc(100vh-308px)] mb-[80px] mt-[180px]">
+        <Authorization />
         <div className="flex flex-col gap-x-[100px] fixed left-0 top-[300px]">
           <Link to="/detail" className="text-blue-500 underline">
             Go to Detail Page
@@ -23,7 +25,7 @@ export default function Home() {
         <DoubleBanner />
         <Carousel />
         <div>
-          <p className="font-bold text-[18px]">
+          <p className="font-bold text-[20px]">
             X - Your Ultimate Online Shopping Destination
           </p>
           <p className="font-medium text-[14px]">

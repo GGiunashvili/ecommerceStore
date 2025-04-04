@@ -64,7 +64,7 @@ export default function Header() {
             </a>
             <a
               href="#"
-              className="flex text-black font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
+              className="flex items-center text-black font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
             >
               <p className="text-[14px] mr-[8px] hidden md:flex text-black">
                 Login
