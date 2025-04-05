@@ -9,6 +9,7 @@ export default function Detail() {
     <>
       <div className="w-full max-w-[1200px] grid grid-cols-12 sm:gap-x-[20px] lg:gap-x-[90px] mx-auto px-[16px] md:px-[32px] mt-[230px] md:mt-[180px]">
         <DetailHeader />
+
         <div className="col-span-12 md:col-span-8">
           <div className="flex flex-col md:flex-row gap-x-[20px]">
             <DetailCarousel />
