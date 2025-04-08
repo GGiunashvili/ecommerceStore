@@ -1,32 +1,30 @@
 // Category.tsx
-import { useEffect, useState } from "react";
-import ProductCard from "../components/ProductCard";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import ProductCardMain from "../components/ProductCardMain";
 import CategoryFilterDrop from "../components/CategoryFilterDrop";
 import CategoryInput from "../components/CategoryInput";
 import CategoryBanner from "../components/CategoryBanner";
-
-type Product = {
-  name: string;
-  price: number;
-  discount_price: number;
-  percent: number;
-  images: { image_url: string }[];
-};
+import { fetchProducts } from "../store/productsSlice";
+import { RootState, AppDispatch } from "../store/store";
 
 export default function Category() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const dispatch = useDispatch<AppDispatch>(); // Explicitly type dispatch here
+  const { products, loading, error } = useSelector(
+    (state: RootState) => state.products
+  );
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch(
-        "https://dati.pythonanywhere.com/category/?category=Electronics&filter=data"
-      );
-      const data = await response.json();
-      setProducts(data);
-    };
+    dispatch(fetchProducts()); // Now TypeScript will know this is an async action
+  }, [dispatch]);
 
-    fetchProducts();
-  }, []);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto grid grid-cols-12 gap-x-[20px] gap-y-[120px] flex-col items-start justify-center min-h-[calc(100vh-308px)] mb-[200px] mt-[200px]">
@@ -39,9 +37,8 @@ export default function Category() {
           <CategoryFilterDrop />
         </div>
 
-        {/* Loop through products and display them */}
         {products.map((product) => (
-          <ProductCard
+          <ProductCardMain
             key={product.name}
             name={product.name}
             price={product.price}
@@ -49,7 +46,7 @@ export default function Category() {
             percent={product.percent}
             imageUrl={
               product.images[0]?.image_url || "https://picsum.photos/600/300"
-            } // Fallback image
+            }
           />
         ))}
       </div>
