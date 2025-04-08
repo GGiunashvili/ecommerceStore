@@ -1,15 +1,30 @@
-const ProductCard = () => {
+// ProductCard.tsx
+type ProductCardProps = {
+  name: string;
+  price: number;
+  discountPrice: number;
+  percent: number;
+  imageUrl: string;
+};
+
+const ProductCard = ({
+  name,
+  price,
+  discountPrice,
+  percent,
+  imageUrl,
+}: ProductCardProps) => {
   return (
     <div className="border rounded-lg shadow-md p-4 bg-white w-full">
       {/* Product Image */}
       <div className="relative">
         <img
-          src="https://picsum.photos/600/300" // Replace with the actual image URL
-          alt="Make It Real Bracelet Building Set"
+          src={imageUrl} // Use dynamic image URL
+          alt={name}
           className="w-full rounded-md"
         />
         <span className="absolute top-2 left-2 bg-red-500 text-white text-sm px-2 py-1 rounded">
-          -46%
+          -{percent}%
         </span>
       </div>
 
@@ -18,18 +33,18 @@ const ProductCard = () => {
         {/* Price */}
         <div className="flex items-center gap-2 mt-2">
           <span className="text-red-500 font-bold text-[14px] md:text-[16px]">
-            19 $
+            {discountPrice} $
           </span>
           <span className="text-gray-400 line-through text-[12px] md:text-[14px]">
-            35 $
+            {price} $
           </span>
         </div>
-        <p className="text-gray-500 text-sm mt-2">Monthly: From 5$</p>
+        <p className="text-gray-500 text-sm mt-2">
+          Monthly: From {discountPrice / 6}$
+        </p>
 
-        <h3 className="font-bold text-[12px] md:text-[14px]">
-          Make It Real Bracelet Building Set
-        </h3>
-        <p className="text-gray-500 text-[12px]">Toys • Toy</p>
+        <h3 className="font-bold text-[12px] md:text-[14px]">{name}</h3>
+        <p className="text-gray-500 text-[12px]">Electronics • Smartphone</p>
 
         {/* Delivery Date */}
       </div>
