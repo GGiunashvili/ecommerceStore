@@ -1,7 +1,7 @@
-// store/productsSlice.ts
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 type Product = {
+  id: string; // Ensure there's a unique ID for the product
   name: string;
   price: number;
   discount_price: number;
@@ -22,12 +22,12 @@ const initialState: ProductsState = {
   error: null,
 };
 
-// Async thunk for fetchng products
+// Async thunk for fetching products by category
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
-  async () => {
+  async (category: string) => {
     const response = await fetch(
-      "https://dati.pythonanywhere.com/category/?category=Electronics&filter=data"
+      `https://dati.pythonanywhere.com/category/?category=${category}&filter=data`
     );
     const data = await response.json();
     return data;

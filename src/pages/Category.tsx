@@ -1,4 +1,3 @@
-// Category.tsx
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCardMain from "../components/ProductCardMain";
@@ -10,17 +9,19 @@ import { RootState, AppDispatch } from "../store/store";
 import { useParams } from "react-router-dom";
 
 export default function Category() {
-  const params = useParams();
-  console.log(params);
+  const { category } = useParams(); // Get category from URL params
+  console.log("Selected category:", category);
 
-  const dispatch = useDispatch<AppDispatch>(); // Explicitly type dispatch here
+  const dispatch = useDispatch<AppDispatch>(); // Use AppDispatch type for dispatch
   const { products, loading, error } = useSelector(
     (state: RootState) => state.products
   );
 
   useEffect(() => {
-    dispatch(fetchProducts()); // Now TypeScript will know this is an async action
-  }, [dispatch]);
+    if (category) {
+      dispatch(fetchProducts(category)); // Dispatch action with category
+    }
+  }, [dispatch, category]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -41,18 +42,22 @@ export default function Category() {
           <CategoryFilterDrop />
         </div>
 
-        {products.map((product) => (
-          <ProductCardMain
-            key={product.name}
-            name={product.name}
-            price={product.price}
-            discountPrice={product.discount_price}
-            percent={product.percent}
-            imageUrl={
-              product.images[0]?.image_url || "https://picsum.photos/600/300"
-            }
-          />
-        ))}
+        {products.length > 0 ? (
+          products.map((product) => (
+            <ProductCardMain
+              key={product.name} // Consider using a unique ID for the key if available
+              name={product.name}
+              price={product.price}
+              discountPrice={product.discount_price}
+              percent={product.percent}
+              imageUrl={
+                product.images[0]?.image_url || "https://picsum.photos/600/300"
+              }
+            />
+          ))
+        ) : (
+          <div>No products available in this category</div>
+        )}
       </div>
     </div>
   );
