@@ -6,7 +6,7 @@ import {
   PermIdentity,
   Search,
 } from "@mui/icons-material";
-
+import SubHeader from "./SubHeader";
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -99,34 +99,7 @@ export default function Header() {
             <Search style={{ fontSize: "24px" }} /> {/* Search Icon */}
           </button>
         </div>
-        <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto">
-          <div className="w-full overflow-scroll flex gap-x-[40px] justify-start md:justify-center items-center">
-            <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              Discounts
-            </p>
-            <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              Electronics
-            </p>
-            <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              Furniture & Home Decor
-            </p>
-            <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              Toys
-            </p>
-            <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              Electronics
-            </p>
-            <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              Furniture & Home Decor
-            </p>
-            <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              Electronics
-            </p>
-            <p className="text-black text-[14px] font-medium whitespace-nowrap">
-              Beauty & Personal Care
-            </p>
-          </div>
-        </div>
+        <SubHeader />
       </header>
     </>
   );
