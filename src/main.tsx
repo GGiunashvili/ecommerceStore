@@ -29,7 +29,10 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/detail", element: <Detail /> },
+
       { path: "/category", element: <Category /> },
+      { path: "/category/:id", element: <Category /> },
+
       { path: "/favorites", element: <Favorites /> },
       { path: "/basket", element: <Basket /> },
       { path: "*", element: <NotFound /> }, // 404 გვერდი
