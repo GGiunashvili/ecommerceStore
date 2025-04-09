@@ -4,7 +4,6 @@ import MultiBanner from "../components/MultiBanner";
 import { Link } from "react-router-dom";
 import DoubleBanner from "../components/DoubleBanner";
 import Authorization from "../components/Authorization";
-import Test from "../components/Test";
 
 export default function Home() {
   return (
@@ -12,7 +11,6 @@ export default function Home() {
       {/* mt-[100px]  */}
       <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto flex gap-y-[80px] flex-col items-center justify-center min-h-[calc(100vh-308px)] mb-[80px] mt-[180px]">
         <Authorization />
-        <Test />
         <div className="flex flex-col gap-x-[100px] fixed left-0 top-[300px]">
           <Link to="/detail" className="text-blue-500 underline">
             Go to Detail Page
