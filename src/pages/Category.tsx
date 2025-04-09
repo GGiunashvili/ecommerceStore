@@ -7,8 +7,12 @@ import CategoryInput from "../components/CategoryInput";
 import CategoryBanner from "../components/CategoryBanner";
 import { fetchProducts } from "../store/productsSlice";
 import { RootState, AppDispatch } from "../store/store";
+import { useParams } from "react-router-dom";
 
 export default function Category() {
+  const params = useParams();
+  console.log(params);
+
   const dispatch = useDispatch<AppDispatch>(); // Explicitly type dispatch here
   const { products, loading, error } = useSelector(
     (state: RootState) => state.products
