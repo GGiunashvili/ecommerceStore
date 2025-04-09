@@ -22,7 +22,7 @@ const initialState: ProductsState = {
   error: null,
 };
 
-// Async thunk for fetching products
+// Async thunk for fetchng products
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
