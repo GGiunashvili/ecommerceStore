@@ -6,7 +6,7 @@ import Carousel from "../components/Carousel";
 export default function Basket() {
   return (
     <>
-      <div className="hidden flex-col justify-center items-center text-center p-4 mt-[180px]">
+      <div className="hidden flex-col justify-center items-center text-center">
         <ShoppingCartCheckout style={{ fontSize: "180px" }} />{" "}
         <p className="text-xl mb-2">Your cart is empty</p>
         <p className="text-gray-600 mb-6">
@@ -17,7 +17,7 @@ export default function Basket() {
           <Link to="/"> Home Page</Link>
         </div>
       </div>{" "}
-      <div className="mt-[240px] md:mt-[180px] mb-[200px] w-full  max-w-[1200px] mx-auto">
+      <div className="w-full max-w-[1200px] pt-[20px] mx-auto mb-[50px] md:mb-[100px]">
         <p className="mb-[20px] text-[18px] md:text-[24px] font-bold px-[16px] md:px-[32px]">
           {" "}
           You have 11 items in your cart
