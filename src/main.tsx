@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Header /> {/* Header ყველა გვერდზე */}
-        <div className="min-h-[calc(100vh-356px)] mt-[208px] md:mt-[148px]">
+        <div className="min-h-[calc(100vh-356px)] mt-[148px] md:mt-[148px]">
           <Outlet /> {/* შიგთავსი აქ ჩაიტვირთება */}
         </div>
         <Footer /> {/* Footer ყველა გვერდზე */}

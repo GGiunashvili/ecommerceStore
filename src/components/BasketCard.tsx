@@ -20,7 +20,7 @@ const BasketCard = () => {
           <p className="text-gray-500 text-[12px]">Toys • Toy</p>
           <p className="text-gray-500 text-sm">Monthly: From 5$</p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="text-red-500 font-bold text-[14px] md:text-[16px]">
             19 $
           </span>

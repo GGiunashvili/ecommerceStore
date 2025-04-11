@@ -26,11 +26,13 @@ export default function ProductDescription({ product }: Props) {
         <p className="text-[14px] font-medium">{product.description}</p>
       </div>
       <div>
-        <p className="mb-[36px] font-bold text-[18px] md:text-[32px]">
+        <p className="mb-[12px] md:mb-[36px] font-bold text-[18px] md:text-[32px]">
           Additional Features
         </p>
         <div className="max-w-[600px]">
-          <p className="mb-[24px] font-bold text-[18px]">General Information</p>
+          <p className="mb-[12px] md:mb-[24px] font-bold text-[14px] md:text-[18px]">
+            General Information
+          </p>
           {/* Corrected section with proper details */}
           <div className="flex mb-[16px] grid-cols-12 gap-x-[20px]">
             <p className="font-medium text-[14px] col-span-6 w-full">Brand</p>

@@ -22,7 +22,7 @@ export default function Basket() {
           {" "}
           You have 11 items in your cart
         </p>
-        <div className="relative  w-full max-w-[1200px] px-[16px] md:px-[32px] grid grid-cols-12 gap-[40px] mx-auto ">
+        <div className="relative flex md:grid flex-col px-[16px] md:px-[32px]  grid-cols-12 gap-[40px] mx-auto ">
           <div className="col-span-12 md:col-span-8  grid gap-y-[25px]">
             <BasketCard />
             <BasketCard />

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full mx-auto bg-black text-white p-6">
+    <footer className="w-full mx-auto bg-black text-white p-6 mb-[52px] md:mb-0">
       <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Links Section */}
@@ -98,7 +98,7 @@ export default function Footer() {
             <h3 className="font-bold text-[12px] md:text-[16px] mb-4">
               Why X?
             </h3>
-            <ul>
+            <ul className="text-[12px]">
               <li>
                 <span className="text-gray-400">Free delivery everywhere</span>
               </li>
@@ -126,7 +126,7 @@ export default function Footer() {
             <h3 className="font-bold text-[12px] md:text-[16px] mb-4">
               Contact
             </h3>
-            <ul>
+            <ul className="text-[12px]">
               <li>
                 <span className="text-gray-400">032 2 56 05 05</span>
               </li>

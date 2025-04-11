@@ -19,12 +19,13 @@ export default function Header() {
             GEL in regions.
           </p>
         </div>
-        <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto mb-[12px] flex justify-between items-center">
-          <Link to="/">
+        <div className="fixed md:static bottom-0 py-[4px] md:py-0 bg-black md:bg-inherit text-white w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto md:mb-[12px] flex justify-between items-center">
+          <Link className="hidden md:flex" to="/">
             <div className="text-[24px] text-black font-bold">
               <span>LOGO</span>
             </div>
           </Link>
+
           <div className="px-[16px] md:px-[32px] w-full hidden md:flex items-center overflow-hidden">
             <input
               data-cy="search_input"
@@ -46,40 +47,45 @@ export default function Header() {
             </button>
           </div>
           {/* Navigation */}
-          <div className="flex justify-between items-center gap-x-[28px] md:gap-x-[32px] h-12 py-[4px]">
+          <div className="w-full md:w-auto flex justify-around md:justify-between items-center gap-x-[28px] md:gap-x-[32px] h-12 py-[4px]">
             <Link
               to="/Favorites"
-              className="relative flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
+              className="relative flex justify-center md:justify-between items-center flex-col md:text-black font-light h-full"
             >
               <FavoriteBorder style={{ fontSize: "24px" }} />{" "}
               {/* Favorite Icon */}
-              <p className="text-[12px] hidden md:flex">Favorites</p>
+              <p className="text-[12px]">Favorites</p>
               <p className="bg-red-500 text-[10px] flex items-center justify-center absolute top-[-4px] right-0 rounded-full text-white font-bold w-[18px] h-[18px]">
                 11
               </p>
             </Link>
             <Link
               to="/Basket"
-              className="relative flex justify-center md:justify-between items-center flex-col text-black font-light h-full"
+              className="relative flex justify-center md:justify-between items-center flex-col md:text-black font-light h-full"
             >
               <ShoppingCartCheckout style={{ fontSize: "24px" }} />{" "}
-              <p className="text-[12px] hidden md:flex">Basket</p>
+              <p className="text-[12px]">Basket</p>
               <p className="bg-red-500 text-[10px] flex items-center justify-center absolute top-[-4px] right-0 rounded-full text-white font-bold w-[18px] h-[18px]">
                 11
               </p>
             </Link>
             <a
               href="#"
-              className="flex items-center text-black font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
+              className="flex flex-col md:flex-row items-center md:text-black font-medium md:font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
             >
-              <p className="text-[14px] mr-[8px] hidden md:flex text-black">
+              <PermIdentity style={{ fontSize: "24px" }} /> {/* User Icon */}
+              <p className="text-[10px] md:text-[14px] md:mr-[8px] md:text-black">
                 Login
               </p>
-              <PermIdentity style={{ fontSize: "24px" }} /> {/* User Icon */}
             </a>
           </div>
         </div>
         <div className="px-[16px] w-full flex md:hidden items-center overflow-hidden mb-[12px]">
+          <Link className="md:hidden mr-[16px]" to="/">
+            <div className="text-[24px] text-black font-bold">
+              <span>LOGO</span>
+            </div>
+          </Link>
           <input
             data-cy="search_input"
             autoComplete="off"

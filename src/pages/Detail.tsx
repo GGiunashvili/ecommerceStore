@@ -17,7 +17,9 @@ type Product = {
   percent: number;
   small_description: string;
   description: string;
-
+  category: {
+    name: string;
+  };
   characteristic: {
     brend: string;
     model: number;
@@ -57,10 +59,21 @@ export default function Detail() {
         <div className="col-span-12 md:col-span-8">
           <div className="flex flex-col md:flex-row gap-x-[20px]">
             <DetailCarousel product={product} />
-            <ProductAbout product={product} />{" "}
+            <div className="w-full mb-[12px] md:hidden">
+              <p className="text-[16px] md:text-[24px] font-semibold mb-[4px]">
+                {product.name}
+              </p>
+              <p className="text-[12px] md:text-[24px] font-semibold text-gray-600">
+                ID: {product.id}
+              </p>
+              <PriceContent product={product} />
+            </div>
+            <div className="hidden md:flex w-full">
+              <ProductAbout product={product} />{" "}
+            </div>
             {/* აქ უკვე გავდემთ product-ას */}
           </div>
-          <div className="w-full my-[40px]">
+          <div className="w-full my-[20px] md:my-[40px]">
             <ProductDesctiption product={product} />
             {/* <h1 className="text-3xl font-bold p-4">{product}</h1> */}
           </div>
@@ -68,7 +81,7 @@ export default function Detail() {
             <Carousel />
           </div>
         </div>
-        <div className="col-span-12 md:col-span-4">
+        <div className="col-span-12 md:col-span-4 hidden md:inline">
           <PriceContent product={product} />
         </div>
 

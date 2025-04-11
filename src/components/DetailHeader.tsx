@@ -1,5 +1,8 @@
 type Product = {
   name: string;
+  category: {
+    name: string;
+  };
 };
 
 type Props = {
@@ -9,17 +12,18 @@ type Props = {
 import { FavoriteBorder } from "@mui/icons-material";
 export default function DetailHeader({ product }: Props) {
   return (
-    <div className="col-span-12 w-full flex flex-col md:flex-row justify-between items-start md:items-center mb-[24px] md:mb-[60px]">
+    <div className="relative col-span-12 w-full flex justify-end md:justify-between items-center md:items-center mb-[24px] md:mb-[30px]">
       {/* სათაური */}
-      <h2 className="text-[16px] md:text-[24px] mb-[12px] md:mb-0 font-semibold text-center">
-        {product.name}
-      </h2>
+
+      <li className="hidden md:flex text-[16px] md:text-[18px] font-semibold text-center">
+        {product.category.name}
+      </li>
 
       {/* სურვილების ღილაკი */}
 
-      <button className="bg-gray-100 text-black px-4 py-2 rounded-full">
+      <button className="flex bg-gray-100 text-black p-2 md:px-3 rounded-full absolute md:static right-0 top-0 ">
         <FavoriteBorder style={{ fontSize: "24px" }} />{" "}
-        <span className="ml-[6px]">Add to Wishlist</span>
+        <span className="ml-[6px] hidden md:flex">Add to Wishlist</span>
       </button>
     </div>
   );

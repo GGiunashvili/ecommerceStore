@@ -15,8 +15,8 @@ type Props = {
 export default function ProductAbout({ product }: Props) {
   return (
     <div className="w-full mt-[24px] md:mt-0">
-      <p className="font-bold text-[14px] mb-[4px]">ID: {product.id}</p>
-      <p className="font-bold text-[14px] mb-[12px]">{product.name}</p>
+      <p className="font-bold text-[22px] mb-[4px]">{product.name}</p>
+      <p className="font-bold text-[14px] mb-[12px]">ID: {product.id}</p>
       <p className="font-medium text-[14px] mb-[10px]">
         {product.small_description}
       </p>

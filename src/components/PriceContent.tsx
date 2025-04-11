@@ -15,7 +15,7 @@ type Props = {
 
 export default function PriceContent({ product }: Props) {
   return (
-    <div className="sticky top-[208px] md:top-[168px] border-gray-300 border-t md:border-none  mx-auto bg-white md:shadow-[0px_0px_16px_rgba(203,203,203,0.25)] mt-[12px] md:mt-0 md:rounded-[16px] md:p-[20px]">
+    <div className="sticky top-[208px] md:top-[168px]  border-gray-200 border-t md:border-none mx-auto bg-white md:shadow-[0px_0px_16px_rgba(203,203,203,0.25)] mt-[12px] md:mt-0 md:rounded-[16px] md:p-[20px]">
       <div className="flex gap-x-[12px] items-center  mt-[12px] md:mt-0">
         <p className="text-black text-[26px] font-bold">
           {product.discount_price} $
@@ -36,18 +36,18 @@ export default function PriceContent({ product }: Props) {
 
       <p className="text-sm text-left mt-2">
         <LocalShipping style={{ fontSize: "24px" }} /> Free delivery{" "}
-        <span className="font-bold text-blue-600">within 3 hours</span>
+        <span className="font-bold text-black">within 3 hours</span>
       </p>
 
       <div className="flex flex-col gap-[12px] mt-4">
-        <button className="w-full bg-gray-200 text-gray-800 py-2 rounded-lg">
+        <button className="w-full bg-purple-500  text-white py-2 rounded-lg">
           Add to Cart
         </button>
         <div className="flex md:flex-col gap-y-[12px] gap-x-[12px]">
-          <button className="w-full bg-green-400 text-white py-2 rounded-lg">
+          <button className="w-full bg-black text-white py-2 rounded-lg">
             Buy Now
           </button>
-          <button className="w-full bg-blue-500 text-white py-2 rounded-lg">
+          <button className="w-full bg-gray-100 text-black py-2 rounded-lg">
             Installment
           </button>
         </div>
