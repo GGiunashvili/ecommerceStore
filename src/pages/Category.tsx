@@ -7,8 +7,11 @@ import CategoryBanner from "../components/CategoryBanner";
 import { fetchProducts } from "../store/productsSlice";
 import { RootState, AppDispatch } from "../store/store";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // დაამატე ეს
 
 export default function Category() {
+  const navigate = useNavigate(); // ← navigate ფუნქცია
+
   const { category } = useParams(); // Get category from URL params
   console.log("Selected category:", category);
 
@@ -44,16 +47,22 @@ export default function Category() {
 
         {products.length > 0 ? (
           products.map((product) => (
-            <ProductCardMain
-              key={product.name} // Consider using a unique ID for the key if available
-              name={product.name}
-              price={product.price}
-              discountPrice={product.discount_price}
-              percent={product.percent}
-              imageUrl={
-                product.images[0]?.image_url || "https://picsum.photos/600/300"
-              }
-            />
+            <div
+              key={product.id}
+              onClick={() => navigate(`/detail/${product.id}`)} // ← გადამისამართება detail გვერდზე
+              className="cursor-pointer"
+            >
+              <ProductCardMain
+                name={product.name}
+                price={product.price}
+                discountPrice={product.discount_price}
+                percent={product.percent}
+                imageUrl={
+                  product.images[0]?.image_url ||
+                  "https://picsum.photos/600/300"
+                }
+              />
+            </div>
           ))
         ) : (
           <div>No products available in this category</div>

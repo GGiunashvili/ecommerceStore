@@ -1,14 +1,31 @@
 import { DateRange, LocalShipping } from "@mui/icons-material";
+type Product = {
+  id: number;
+  name: string;
+  price: number;
+  discount_price: number;
+  images: { image_url: string }[];
+  percent: number;
+  small_description: string;
+};
 
-export default function PriceContent() {
+type Props = {
+  product: Product;
+};
+
+export default function PriceContent({ product }: Props) {
   return (
     <div className="sticky top-[100px] border-gray-300 border-t md:border-none  mx-auto bg-white md:shadow-[0px_0px_16px_rgba(203,203,203,0.25)] mt-[12px] md:mt-0 md:rounded-[16px] md:p-[20px]">
       <div className="flex gap-x-[12px] items-center md:justify-around mt-[12px] md:mt-0">
-        <p className="text-black text-[26px] font-bold">3899.00 $</p>
-        <p className="text-gray-500 line-through text-[16px]">3699.00 $</p>
+        <p className="text-black text-[26px] font-bold">
+          {product.discount_price} $
+        </p>
+        <p className="text-gray-500 line-through text-[16px]">
+          {product.price} $
+        </p>
 
         <p className="bg-red-500 rounded-full text-white text-[12px] p-[4px]">
-          -5%
+          {product.percent}%
         </p>
       </div>
 
