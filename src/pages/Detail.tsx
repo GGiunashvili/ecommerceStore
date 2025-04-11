@@ -43,12 +43,16 @@ export default function Detail() {
   }, [id]);
 
   if (!product) {
-    return <div>Loading...</div>; // თუ პროდუქტი ჯერ არ ჩამოიტანა
+    return (
+      <div className="min-h-[calc(100vh-356px)] mt-[208px] md:mt-[148px] flex justify-center items-center text-3xl">
+        Loading...
+      </div>
+    ); // თუ პროდუქტი ჯერ არ ჩამოიტანა
   }
 
   return (
     <>
-      <div className="w-full max-w-[1200px] grid grid-cols-12 sm:gap-x-[20px] lg:gap-x-[90px] mx-auto px-[16px] md:px-[32px] mt-[230px] md:mt-[180px]">
+      <div className="w-full max-w-[1200px] grid grid-cols-12 sm:gap-x-[20px] lg:gap-x-[90px] mx-auto px-[16px] md:px-[32px] pt-[20px] mb-[50px] md:mb-[100px]">
         <DetailHeader product={product} />
         <div className="col-span-12 md:col-span-8">
           <div className="flex flex-col md:flex-row gap-x-[20px]">
@@ -61,12 +65,12 @@ export default function Detail() {
           <PriceContent product={product} />
         </div>
 
-        <div className="col-span-12 md:col-span-8 w-full my-[60px]">
+        <div className="col-span-12 md:col-span-8 w-full mt-[60px]">
           <div className="w-full mb-[60px]">
             <ProductDesctiption product={product} />
             {/* <h1 className="text-3xl font-bold p-4">{product}</h1> */}
           </div>
-          <div className="w-full mb-[60px]">
+          <div className="w-full">
             <Carousel />
           </div>
         </div>

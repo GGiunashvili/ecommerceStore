@@ -6,7 +6,7 @@ import Carousel from "../components/Carousel";
 export default function Basket() {
   return (
     <>
-      <div className="hidden min-h-[calc(100vh-308px)]  flex-col justify-center items-center text-center p-4 mt-[180px]">
+      <div className="hidden flex-col justify-center items-center text-center p-4 mt-[180px]">
         <ShoppingCartCheckout style={{ fontSize: "180px" }} />{" "}
         <p className="text-xl mb-2">Your cart is empty</p>
         <p className="text-gray-600 mb-6">

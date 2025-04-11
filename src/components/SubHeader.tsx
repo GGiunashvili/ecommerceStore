@@ -37,12 +37,12 @@ export default function SubHeader() {
 
   return (
     <div className="text-black">
-      <ul className="flex gap-x-[60px] justify-center items-center">
+      <ul className="flex gap-x-[60px] justify-start md:justify-center items-center overflow-scroll mx-[16px]">
         {categories.map((category, index) => (
           <li
             key={index}
             onClick={() => handleCategoryClick(category)} // Handle category click
-            className="cursor-pointer hover:underline"
+            className="cursor-pointer hover:underline whitespace-nowrap"
           >
             {category}
           </li>

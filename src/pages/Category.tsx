@@ -27,7 +27,11 @@ export default function Category() {
   }, [dispatch, category]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="min-h-[calc(100vh-356px)] mt-[208px] md:mt-[148px] flex justify-center items-center text-3xl">
+        Loading...
+      </div>
+    );
   }
 
   if (error) {
@@ -35,7 +39,7 @@ export default function Category() {
   }
 
   return (
-    <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto grid grid-cols-12 gap-x-[20px] gap-y-[120px] flex-col items-start justify-center min-h-[calc(100vh-308px)] mb-[200px] mt-[200px]">
+    <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto grid grid-cols-12 gap-x-[20px] gap-y-[120px] flex-col items-start justify-center pt-[20px] mb-[50px] md:mb-[100px]">
       <div className="col-span-12 md:col-span-3">
         <CategoryInput />
       </div>
