@@ -71,7 +71,7 @@ export default function Header() {
             </Link>
             <a
               href="#"
-              className="flex flex-col md:flex-row items-center md:text-black font-medium md:font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
+              className="flex flex-col md:flex-row-reverse items-center md:text-black font-medium md:font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
             >
               <PermIdentity style={{ fontSize: "24px" }} /> {/* User Icon */}
               <p className="text-[10px] md:text-[14px] md:mr-[8px] md:text-black">

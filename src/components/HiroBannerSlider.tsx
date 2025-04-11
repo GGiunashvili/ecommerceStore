@@ -21,27 +21,27 @@ const HiroBannerSlider = () => {
           <SwiperSlide>
             <div className="relative">
               <img
-                src="https://picsum.photos/600/300"
+                src="https://static.vecteezy.com/system/resources/previews/003/240/364/non_2x/shopping-online-on-phone-paper-art-modern-pink-background-gifts-box-free-vector.jpg"
                 alt="Make It Real სამაჯურების ასაწყობი ნაკრები"
-                className="w-full rounded-md max-h-[200px]"
+                className="w-full rounded-md "
               />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative">
               <img
-                src="https://picsum.photos/600/300"
+                src="https://static.vecteezy.com/system/resources/previews/002/006/605/non_2x/paper-art-shopping-online-on-smartphone-and-new-buy-sale-promotion-pink-backgroud-for-banner-market-ecommerce-free-vector.jpg"
                 alt="Make It Real სამაჯურების ასაწყობი ნაკრები"
-                className="w-full rounded-md max-h-[200px]"
+                className="w-full rounded-md "
               />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="relative">
               <img
-                src="https://picsum.photos/600/300"
+                src="https://static.vecteezy.com/system/resources/previews/004/707/493/non_2x/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-vector.jpg"
                 alt="Make It Real სამაჯურების ასაწყობი ნაკრები"
-                className="w-full rounded-md max-h-[200px]"
+                className="w-full rounded-md "
               />
             </div>
           </SwiperSlide>

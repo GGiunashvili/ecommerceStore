@@ -1,6 +1,7 @@
+import { FavoriteBorder, ShoppingCartCheckout } from "@mui/icons-material";
 const ProductCard = () => {
   return (
-    <div className="border rounded-lg shadow-md p-4 bg-white w-full">
+    <div className="bg-white w-full">
       {/* Product Image */}
       <div className="relative">
         <img
@@ -29,8 +30,17 @@ const ProductCard = () => {
         <h3 className="font-bold text-[12px] md:text-[14px]">
           Make It Real Bracelet Building Set
         </h3>
-        <p className="text-gray-500 text-[12px]">Toys • Toy</p>
-
+        <p className="text-gray-500 text-[12px] mb-[4px]">Toys • Toy</p>
+        <div className="flex">
+          <button className="bg-gray-100 rounded-md mr-2 px-2">
+            <FavoriteBorder style={{ fontSize: "20px" }} /> {/* Search Icon */}
+          </button>
+          <button className="bg-purple-100 w-full rounded-md p-[4px] ">
+            <ShoppingCartCheckout style={{ fontSize: "20px" }} />{" "}
+            {/* Search Icon */}
+            Basket
+          </button>
+        </div>
         {/* Delivery Date */}
       </div>
     </div>
