@@ -15,7 +15,7 @@ type Props = {
 
 export default function PriceContent({ product }: Props) {
   return (
-    <div className="sticky top-[100px] border-gray-300 border-t md:border-none  mx-auto bg-white md:shadow-[0px_0px_16px_rgba(203,203,203,0.25)] mt-[12px] md:mt-0 md:rounded-[16px] md:p-[20px]">
+    <div className="sticky top-[208px] md:top-[168px] border-gray-300 border-t md:border-none  mx-auto bg-white md:shadow-[0px_0px_16px_rgba(203,203,203,0.25)] mt-[12px] md:mt-0 md:rounded-[16px] md:p-[20px]">
       <div className="flex gap-x-[12px] items-center  mt-[12px] md:mt-0">
         <p className="text-black text-[26px] font-bold">
           {product.discount_price} $

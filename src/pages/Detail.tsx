@@ -60,19 +60,16 @@ export default function Detail() {
             <ProductAbout product={product} />{" "}
             {/* აქ უკვე გავდემთ product-ას */}
           </div>
-        </div>
-        <div className="col-span-12 md:col-span-4">
-          <PriceContent product={product} />
-        </div>
-
-        <div className="col-span-12 md:col-span-8 w-full mt-[60px]">
-          <div className="w-full mb-[60px]">
+          <div className="w-full my-[40px]">
             <ProductDesctiption product={product} />
             {/* <h1 className="text-3xl font-bold p-4">{product}</h1> */}
           </div>
           <div className="w-full">
             <Carousel />
           </div>
+        </div>
+        <div className="col-span-12 md:col-span-4">
+          <PriceContent product={product} />
         </div>
 
         <div className="hidden md:col-span-4 w-full my-[60px]">33</div>
