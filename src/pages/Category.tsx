@@ -6,23 +6,20 @@ import CategoryInput from "../components/CategoryInput";
 import CategoryBanner from "../components/CategoryBanner";
 import { fetchProducts } from "../store/productsSlice";
 import { RootState, AppDispatch } from "../store/store";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom"; // დაამატე ეს
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function Category() {
-  const navigate = useNavigate(); // ← navigate ფუნქცია
+  const navigate = useNavigate();
+  const { category } = useParams();
 
-  const { category } = useParams(); // Get category from URL params
-  console.log("Selected category:", category);
-
-  const dispatch = useDispatch<AppDispatch>(); // Use AppDispatch type for dispatch
+  const dispatch = useDispatch<AppDispatch>();
   const { products, loading, error } = useSelector(
     (state: RootState) => state.products
   );
 
   useEffect(() => {
     if (category) {
-      dispatch(fetchProducts(category)); // Dispatch action with category
+      dispatch(fetchProducts(category));
     }
   }, [dispatch, category]);
 
@@ -35,7 +32,11 @@ export default function Category() {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="text-red-500 text-center mt-[200px] text-xl">
+        Error: {error}
+      </div>
+    );
   }
 
   return (
@@ -43,6 +44,7 @@ export default function Category() {
       <div className="col-span-12 md:col-span-3">
         <CategoryInput />
       </div>
+
       <div className="col-span-12 md:col-span-9 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[24px]">
         <div className="col-span-2 md:col-span-3 lg:col-span-4 text-right">
           <CategoryBanner />
@@ -53,7 +55,7 @@ export default function Category() {
           products.map((product) => (
             <div
               key={product.id}
-              onClick={() => navigate(`/detail/${product.id}`)} // ← გადამისამართება detail გვერდზე
+              onClick={() => navigate(`/detail/${product.id}`)}
               className="cursor-pointer"
             >
               <ProductCardMain
@@ -62,14 +64,16 @@ export default function Category() {
                 discountPrice={product.discount_price}
                 percent={product.percent}
                 imageUrl={
-                  product.images[0]?.image_url ||
+                  product.images?.[0]?.image_url ??
                   "https://picsum.photos/600/300"
                 }
               />
             </div>
           ))
         ) : (
-          <div>No products available in this category</div>
+          <div className="col-span-full text-center text-lg mt-10">
+            No products available in this category
+          </div>
         )}
       </div>
     </div>

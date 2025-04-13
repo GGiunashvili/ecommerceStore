@@ -1,26 +1,27 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchProducts } from "../store/productsSlice";
-import { AppDispatch } from "../store/store"; // Import AppDispatch to properly type dispatch
+import { AppDispatch } from "../store/store";
 
-interface Product {
-  category: {
-    name: string;
-  };
+interface Category {
+  id: number;
+  name: string;
 }
 
 export default function SubHeader() {
   const [categories, setCategories] = useState<string[]>([]);
   const navigate = useNavigate();
-  const dispatch = useDispatch<AppDispatch>(); // Explicitly type dispatch here
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     fetch("https://dati.pythonanywhere.com/category/")
       .then((res) => res.json())
-      .then((data: Product[]) => {
+      .then((data: Category[]) => {
         const uniqueCategories = Array.from(
-          new Set(data.map((item) => item.category.name))
+          new Set(data.map((item) => item.name))
         );
         setCategories(uniqueCategories);
       })
@@ -29,10 +30,8 @@ export default function SubHeader() {
 
   const handleCategoryClick = (category: string) => {
     const encodedCategory = encodeURIComponent(category);
-    navigate(`/category/${encodedCategory}`); // Navigate to category page
-
-    // Dispatch fetchProducts action with the selected category
-    dispatch(fetchProducts(category)); // Trigger product fetching
+    navigate(`/category/${encodedCategory}`);
+    dispatch(fetchProducts(category));
   };
 
   return (
@@ -41,7 +40,7 @@ export default function SubHeader() {
         {categories.map((category, index) => (
           <li
             key={index}
-            onClick={() => handleCategoryClick(category)} // Handle category click
+            onClick={() => handleCategoryClick(category)}
             className="cursor-pointer hover:underline whitespace-nowrap"
           >
             {category}
