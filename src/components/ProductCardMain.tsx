@@ -17,7 +17,11 @@ const ProductCardMain = ({
   return (
     <div className="border rounded-lg shadow-md p-4 bg-white w-full">
       <div className="relative">
-        <img src={imageUrl} alt={name} className="w-full rounded-md" />
+        <img
+          src={imageUrl}
+          alt={name}
+          className="w-full rounded-md h-[200px]"
+        />
         <span className="absolute top-2 left-2 bg-red-500 text-white text-sm px-2 py-1 rounded">
           -{percent}%
         </span>
@@ -28,15 +32,17 @@ const ProductCardMain = ({
           <span className="text-red-500 font-bold text-[14px] md:text-[16px]">
             {discountPrice} $
           </span>
-          <span className="text-gray-400 line-through text-[12px] md:text-[14px]">
+          <span className="text-gray-400 line-through text-[12px] md:text-[14px] ">
             {price} $
           </span>
         </div>
-        <p className="text-gray-500 text-sm mt-2">
+        <p className="text-gray-500 text-[10px] mt-2 truncate overflow-hidden whitespace-nowrap">
           Monthly: From {discountPrice / 6}$
         </p>
 
-        <h3 className="font-bold text-[12px] md:text-[14px]">{name}</h3>
+        <h3 className="font-bold text-[12px] md:text-[14px] line-clamp-2">
+          {name}
+        </h3>
         {/* <p className="text-gray-500 text-[12px]">Electronics • Smartphone</p> */}
       </div>
     </div>
