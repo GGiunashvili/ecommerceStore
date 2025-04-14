@@ -37,7 +37,7 @@ const ProductCardMain = ({
         </p>
 
         <h3 className="font-bold text-[12px] md:text-[14px]">{name}</h3>
-        <p className="text-gray-500 text-[12px]">Electronics • Smartphone</p>
+        {/* <p className="text-gray-500 text-[12px]">Electronics • Smartphone</p> */}
       </div>
     </div>
   );

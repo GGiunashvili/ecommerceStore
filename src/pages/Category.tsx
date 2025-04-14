@@ -63,10 +63,7 @@ export default function Category() {
                 price={product.price}
                 discountPrice={product.discount_price}
                 percent={product.percent}
-                imageUrl={
-                  product.images?.[0]?.image_url ??
-                  "https://picsum.photos/600/300"
-                }
+                imageUrl={product.images?.[0]?.image_url}
               />
             </div>
           ))

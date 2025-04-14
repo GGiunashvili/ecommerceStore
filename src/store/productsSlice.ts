@@ -27,7 +27,7 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (category: string) => {
     const response = await fetch(
-      `https://dati.pythonanywhere.com/category/?category=${category}&filter=data`
+      `https://dati.pythonanywhere.com/filter/?category=${category}&filter=date`
     );
     const data = await response.json();
     return data;
