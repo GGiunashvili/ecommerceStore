@@ -26,8 +26,12 @@ const initialState: ProductsState = {
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async (category: string) => {
+    const decodedCategory = decodeURIComponent(category); // optional
+
     const response = await fetch(
-      `https://dati.pythonanywhere.com/filter/?category=${category}&filter=date`
+      `https://dati.pythonanywhere.com/filter/?category=${encodeURIComponent(
+        decodedCategory
+      )}&filter=date`
     );
     const data = await response.json();
     return data;
