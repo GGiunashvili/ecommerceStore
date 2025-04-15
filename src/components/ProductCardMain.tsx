@@ -1,3 +1,5 @@
+import { FavoriteBorder, ShoppingCartCheckout } from "@mui/icons-material";
+
 // ProductCard.tsx (No changes needed)
 type ProductCardProps = {
   name: string;
@@ -15,7 +17,7 @@ const ProductCardMain = ({
   imageUrl,
 }: ProductCardProps) => {
   return (
-    <div className="border rounded-lg shadow-md p-4 bg-white w-full">
+    <div className="bg-white w-full">
       <div className="relative">
         <img
           src={imageUrl}
@@ -44,6 +46,16 @@ const ProductCardMain = ({
           {name}
         </h3>
         {/* <p className="text-gray-500 text-[12px]">Electronics • Smartphone</p> */}
+      </div>
+      <div className="flex">
+        <button className="bg-gray-100 rounded-md mr-2 px-2">
+          <FavoriteBorder style={{ fontSize: "20px" }} /> {/* Search Icon */}
+        </button>
+        <button className="bg-purple-100 w-full rounded-md p-[4px] ">
+          <ShoppingCartCheckout style={{ fontSize: "20px" }} />{" "}
+          {/* Search Icon */}
+          Basket
+        </button>
       </div>
     </div>
   );
