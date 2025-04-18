@@ -1,21 +1,19 @@
+"use client";
+import { ShoppingCartCheckout } from "@mui/icons-material";
+
 import { FC } from "react";
 
 interface AddToBasketButtonProps {
-  productId: string | number; // Accept both types
+  productId: string | number;
 }
 
 const AddToBasketButton: FC<AddToBasketButtonProps> = ({ productId }) => {
   const handleAddToBasket = () => {
-    // Get stored product IDs from localStorage
     const existing = localStorage.getItem("selectedProductIds");
-
-    // Parse the stored string into an array
     let ids: string[] = existing ? JSON.parse(existing) : [];
 
-    // Ensure the productId is a string in localStorage
     const productIdString = productId.toString();
 
-    // If the ID is not already in the list, add it
     if (!ids.includes(productIdString)) {
       ids.push(productIdString);
       localStorage.setItem("selectedProductIds", JSON.stringify(ids));
@@ -28,12 +26,12 @@ const AddToBasketButton: FC<AddToBasketButtonProps> = ({ productId }) => {
   return (
     <button
       onClick={handleAddToBasket}
-      className="mt-2 bg-blue-500 text-white px-4 py-1 rounded"
+      className="bg-purple-100 flex-1 rounded-md px-2 py-1 flex items-center justify-center gap-1 transition-all duration-150 active:scale-95 active:shadow-inner"
     >
-      Add to Basket
+      <ShoppingCartCheckout style={{ fontSize: "20px" }} />
+      Add
     </button>
   );
 };
 
-// Export the component
 export default AddToBasketButton;

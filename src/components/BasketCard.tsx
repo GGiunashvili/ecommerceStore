@@ -20,7 +20,7 @@ const BasketCard: React.FC<BasketCardProps> = ({
   onRemove,
 }) => {
   return (
-    <div className="flex border border-gray-200 rounded-lg shadow-md p-4 bg-white w-full">
+    <div className="flex h-fit border border-gray-200 rounded-lg shadow-md p-4 bg-white w-full">
       {/* Product Image */}
       <img
         src={imageUrl} // Use actual image URL from props

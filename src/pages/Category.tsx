@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCardMain from "../components/ProductCardMain";
@@ -6,14 +8,12 @@ import CategoryInput from "../components/CategoryInput";
 import CategoryBanner from "../components/CategoryBanner";
 import { fetchProducts } from "../store/productsSlice";
 import { RootState, AppDispatch } from "../store/store";
-import { useParams, useNavigate } from "react-router-dom";
-import AddToBasketButton from "../components/AddToBasketButton"; // Import the new button component
+import { useParams } from "react-router-dom";
 
 export default function Category() {
-  const navigate = useNavigate();
   const { category } = useParams();
-
   const dispatch = useDispatch<AppDispatch>();
+
   const { products, loading, error } = useSelector(
     (state: RootState) => state.products
   );
@@ -41,7 +41,7 @@ export default function Category() {
   }
 
   return (
-    <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto grid grid-cols-12 gap-x-[20px] gap-y-[120px] flex-col items-start justify-center pt-[20px] mb-[50px] md:mb-[100px]">
+    <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto grid grid-cols-12 gap-x-[20px] gap-y-[120px] pt-[20px] mb-[50px] md:mb-[100px]">
       <div className="col-span-12 md:col-span-3">
         <CategoryInput />
       </div>
@@ -54,20 +54,15 @@ export default function Category() {
 
         {products.length > 0 ? (
           products.map((product) => (
-            <div key={product.id} className="cursor-pointer">
-              <div onClick={() => navigate(`/detail/${product.id}`)}>
-                <ProductCardMain
-                  name={product.name}
-                  price={product.price}
-                  discountPrice={product.discount_price}
-                  percent={product.percent}
-                  imageUrl={product.images?.[0]?.image_url}
-                />
-              </div>
-
-              {/* Use the AddToBasketButton component here */}
-              <AddToBasketButton productId={Number(product.id)} />
-            </div>
+            <ProductCardMain
+              key={product.id}
+              name={product.name}
+              price={product.price}
+              discountPrice={product.discount_price}
+              percent={product.percent}
+              imageUrl={product.images?.[0]?.image_url}
+              productId={Number(product.id)}
+            />
           ))
         ) : (
           <div className="col-span-full text-center text-lg mt-10">
