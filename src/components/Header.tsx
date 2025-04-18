@@ -7,6 +7,7 @@ import {
   Search,
 } from "@mui/icons-material";
 import SubHeader from "./SubHeader";
+import BasketCounter from "./BasketCounter";
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -65,9 +66,9 @@ export default function Header() {
             >
               <ShoppingCartCheckout style={{ fontSize: "24px" }} />{" "}
               <p className="text-[12px]">Basket</p>
-              <p className="bg-red-500 text-[10px] flex items-center justify-center absolute top-[-4px] right-0 rounded-full text-white font-bold w-[18px] h-[18px]">
-                11
-              </p>
+              <div className="bg-red-500 text-[10px] flex items-center justify-center absolute top-[-4px] right-0 rounded-full text-white font-bold w-[18px] h-[18px]">
+                <BasketCounter />
+              </div>
             </Link>
             <a
               href="#"
