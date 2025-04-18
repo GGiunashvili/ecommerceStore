@@ -7,6 +7,7 @@ import CategoryBanner from "../components/CategoryBanner";
 import { fetchProducts } from "../store/productsSlice";
 import { RootState, AppDispatch } from "../store/store";
 import { useParams, useNavigate } from "react-router-dom";
+import AddToBasketButton from "../components/AddToBasketButton"; // Import the new button component
 
 export default function Category() {
   const navigate = useNavigate();
@@ -64,30 +65,8 @@ export default function Category() {
                 />
               </div>
 
-              <button
-                onClick={() => {
-                  // წამოიღე შენახული ID-ები
-                  const existing = localStorage.getItem("selectedProductIds");
-
-                  // გადააკეთე JSON string მასივად (string[])
-                  let ids: string[] = existing ? JSON.parse(existing) : [];
-
-                  // თუ ეს ID უკვე არ არის სიაში — დაამატე
-                  if (!ids.includes(product.id)) {
-                    ids.push(product.id);
-                    localStorage.setItem(
-                      "selectedProductIds",
-                      JSON.stringify(ids)
-                    );
-                    console.log("დაემატა ID:", product.id);
-                  } else {
-                    console.log("უკვე არსებობს:", product.id);
-                  }
-                }}
-                className="mt-2 bg-blue-500 text-white px-4 py-1 rounded"
-              >
-                on this button
-              </button>
+              {/* Use the AddToBasketButton component here */}
+              <AddToBasketButton productId={Number(product.id)} />
             </div>
           ))
         ) : (
