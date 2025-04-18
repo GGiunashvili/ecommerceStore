@@ -5,7 +5,7 @@ import BasketPrise from "../components/BasketPrise";
 import Carousel from "../components/Carousel";
 import { useState, useEffect } from "react";
 
-interface Product {
+export interface Product {
   id: string;
   name: string;
   price: number;
@@ -13,6 +13,7 @@ interface Product {
   percent: number;
   images: { image_url: string }[];
 }
+
 export default function Basket() {
   const [savedProducts, setSavedProducts] = useState<Product[]>([]);
 
@@ -84,7 +85,7 @@ export default function Basket() {
             )}
           </div>
           <div className="col-span-12 md:col-span-4">
-            <BasketPrise />
+            <BasketPrise savedProducts={savedProducts} />
           </div>
 
           <div className="col-span-12">
