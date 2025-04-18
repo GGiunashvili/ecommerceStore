@@ -53,18 +53,41 @@ export default function Category() {
 
         {products.length > 0 ? (
           products.map((product) => (
-            <div
-              key={product.id}
-              onClick={() => navigate(`/detail/${product.id}`)}
-              className="cursor-pointer"
-            >
-              <ProductCardMain
-                name={product.name}
-                price={product.price}
-                discountPrice={product.discount_price}
-                percent={product.percent}
-                imageUrl={product.images?.[0]?.image_url}
-              />
+            <div key={product.id} className="cursor-pointer">
+              <div onClick={() => navigate(`/detail/${product.id}`)}>
+                <ProductCardMain
+                  name={product.name}
+                  price={product.price}
+                  discountPrice={product.discount_price}
+                  percent={product.percent}
+                  imageUrl={product.images?.[0]?.image_url}
+                />
+              </div>
+
+              <button
+                onClick={() => {
+                  // წამოიღე შენახული ID-ები
+                  const existing = localStorage.getItem("selectedProductIds");
+
+                  // გადააკეთე JSON string მასივად (string[])
+                  let ids: string[] = existing ? JSON.parse(existing) : [];
+
+                  // თუ ეს ID უკვე არ არის სიაში — დაამატე
+                  if (!ids.includes(product.id)) {
+                    ids.push(product.id);
+                    localStorage.setItem(
+                      "selectedProductIds",
+                      JSON.stringify(ids)
+                    );
+                    console.log("დაემატა ID:", product.id);
+                  } else {
+                    console.log("უკვე არსებობს:", product.id);
+                  }
+                }}
+                className="mt-2 bg-blue-500 text-white px-4 py-1 rounded"
+              >
+                on this button
+              </button>
             </div>
           ))
         ) : (

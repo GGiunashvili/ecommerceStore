@@ -1,42 +1,59 @@
 import { Delete } from "@mui/icons-material";
 
-const BasketCard = () => {
+interface BasketCardProps {
+  id: string;
+  name: string;
+  price: number;
+  discountPrice: number;
+  percent: number;
+  imageUrl: string;
+  onRemove: (id: string) => void;
+}
+
+const BasketCard: React.FC<BasketCardProps> = ({
+  id,
+  name,
+  price,
+  discountPrice,
+  percent,
+  imageUrl,
+  onRemove,
+}) => {
   return (
     <div className="flex border border-gray-200 rounded-lg shadow-md p-4 bg-white w-full">
       {/* Product Image */}
       <img
-        src="https://picsum.photos/600/300" // Replace with the actual image URL
-        alt="Make It Real Bracelet Building Set"
+        src={imageUrl} // Use actual image URL from props
+        alt={name}
         className="w-full max-w-[120px] max-h-[120px] rounded-md"
       />
 
       {/* Product Info */}
       <div className="flex justify-between w-full pl-[16px] gap-[20px] items-start">
-        {/* Price */}
+        {/* Product Name & Info */}
         <div>
-          <h3 className="font-bold text-[12px] md:text-[14px]">
-            Make It Real Bracelet Building Set
-          </h3>
+          <h3 className="font-bold text-[12px] md:text-[14px]">{name}</h3>
           <p className="text-gray-500 text-[12px]">Toys • Toy</p>
           <p className="text-gray-500 text-sm">Monthly: From 5$</p>
         </div>
+
+        {/* Price */}
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-red-500 font-bold text-[14px] md:text-[16px]">
-            19 $
+            {discountPrice} $
           </span>
           <span className="text-gray-400 line-through text-[12px] md:text-[14px]">
-            35 $
+            {price} $
           </span>
           <span className="bg-red-500 text-white text-sm px-2 py-1 rounded">
-            -46%
+            -{percent}%
           </span>
         </div>
-        <button>
-          {" "}
-          <Delete className="text-black" style={{ fontSize: "24px" }} />{" "}
-        </button>
 
-        {/* Delivery Date */}
+        {/* Remove Button */}
+        <button onClick={() => onRemove(id)}>
+          <Delete className="text-black" style={{ fontSize: "24px" }} />
+        </button>
       </div>
     </div>
   );
