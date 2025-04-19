@@ -8,8 +8,12 @@ import {
 } from "@mui/icons-material";
 import SubHeader from "./SubHeader";
 import BasketCounter from "./BasketCounter";
+import { useSelector } from "react-redux";
+import type { RootState } from "../store/store";
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const counterValue = useSelector((state: RootState) => state.counter.value);
 
   return (
     <>
@@ -25,6 +29,7 @@ export default function Header() {
             <div className="text-[24px] text-black font-bold">
               <span>LOGO</span>
             </div>
+            <p className="text-red-500">{counterValue}</p>
           </Link>
 
           <div className="px-[16px] md:px-[32px] w-full hidden md:flex items-center overflow-hidden">

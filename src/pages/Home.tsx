@@ -3,12 +3,14 @@ import HiroBannerSlider from "../components/HiroBannerSlider";
 import MultiBanner from "../components/MultiBanner";
 import DoubleBanner from "../components/DoubleBanner";
 import Authorization from "../components/Authorization";
+import Counter from "../components/Counter";
 
 export default function Home() {
   return (
     <>
       {/* mt-[100px]  */}
       <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto flex gap-y-[40px] flex-col items-center justify-center pt-[20px] mb-[50px] md:mb-[100px]">
+        <Counter />
         <Authorization />
         <HiroBannerSlider />
         <MultiBanner />
