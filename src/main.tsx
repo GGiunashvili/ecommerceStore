@@ -13,7 +13,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Basket from "./pages/Basket";
-import Favorites from "./pages/Favorites";
+// import Favorites from "./pages/Favorites";
 
 // მარშრუტების კონფიგურაცია
 const router = createBrowserRouter([
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       { path: "/category", element: <Category /> },
       { path: "/category/:id", element: <Category /> },
 
-      { path: "/favorites", element: <Favorites /> },
+      // { path: "/favorites", element: <Favorites /> },
       { path: "/basket", element: <Basket /> },
       { path: "*", element: <NotFound /> }, // 404 გვერდი
     ],
@@ -47,8 +47,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
-      {" "}
-      {/* Redux provider */}
       <RouterProvider router={router} /> {/* Router system */}
     </Provider>
   </StrictMode>
