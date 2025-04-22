@@ -43,6 +43,7 @@ export default function Detail() {
         });
     }
   }, [id]);
+  // console.log(product?.category.name);
 
   if (!product) {
     return (
@@ -78,7 +79,7 @@ export default function Detail() {
             {/* <h1 className="text-3xl font-bold p-4">{product}</h1> */}
           </div>
           <div className="w-full">
-            <Carousel />
+            <Carousel category={product?.category.name} />
           </div>
         </div>
         <div className="col-span-12 md:col-span-4 hidden md:inline">
