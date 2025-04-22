@@ -14,9 +14,9 @@ export default function Home() {
         <Authorization />
         <HiroBannerSlider />
         <MultiBanner />
-        <Carousel />
+        <Carousel category="electronics" />
         <DoubleBanner />
-        <Carousel />
+        <Carousel category="toys" />
         <div>
           <p className="font-bold text-[20px]">
             X - Your Ultimate Online Shopping Destination

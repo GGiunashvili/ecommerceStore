@@ -15,9 +15,17 @@ type Product = {
   name: string;
   price: number;
   description: string;
+  discountPrice: number;
+  percent: number;
+  images: {
+    id: number;
+    image_url: string;
+  }[];
 };
-
-const Carousel = () => {
+type CarouselProps = {
+  category: string;
+};
+const Carousel = ({ category }: CarouselProps) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,7 +33,7 @@ const Carousel = () => {
     const fetchProducts = async () => {
       try {
         const res = await axios.get(
-          "https://dati.pythonanywhere.com/products/"
+          `https://dati.pythonanywhere.com/filter/?category=${category}`
         );
         setProducts(res.data);
       } catch (error) {
@@ -43,8 +51,8 @@ const Carousel = () => {
   return (
     <div className="w-full">
       <div className="flex justify-between items-center mb-[36px]">
-        <p className="font-bold text-[18px] md:text-[32px]">Similar Products</p>
-        <p className="text-[14px] font-bold">See all</p>
+        <p className="font-bold text-[18px] md:text-[32px]">{category}</p>
+        <button className="text-[14px] font-bold">See all</button>
       </div>
       <div className="w-full relative">
         <Swiper
