@@ -36,7 +36,9 @@ const Carousel = ({ category }: CarouselProps) => {
     const fetchProducts = async () => {
       try {
         const res = await axios.get(
-          `https://dati.pythonanywhere.com/filter/?category=${category}`
+          `https://dati.pythonanywhere.com/filter/?category=${encodeURIComponent(
+            category
+          )}`
         );
         setProducts(res.data);
       } catch (error) {
@@ -47,7 +49,7 @@ const Carousel = ({ category }: CarouselProps) => {
     };
 
     fetchProducts();
-  }, [category]); // Make sure category is a dependency for re-fetching when category changes
+  }, [category]);
 
   if (loading) return <p>Loading...</p>;
 
