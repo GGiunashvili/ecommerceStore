@@ -9,6 +9,7 @@ import { ArrowForwardIos } from "@mui/icons-material";
 import { Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 type Product = {
   id: number;
@@ -25,9 +26,11 @@ type Product = {
 type CarouselProps = {
   category: string;
 };
+
 const Carousel = ({ category }: CarouselProps) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); // move `useNavigate` outside `useEffect`
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -44,7 +47,7 @@ const Carousel = ({ category }: CarouselProps) => {
     };
 
     fetchProducts();
-  }, []);
+  }, [category]); // Make sure category is a dependency for re-fetching when category changes
 
   if (loading) return <p>Loading...</p>;
 
@@ -52,7 +55,12 @@ const Carousel = ({ category }: CarouselProps) => {
     <div className="w-full">
       <div className="flex justify-between items-center mb-[36px]">
         <p className="font-bold text-[18px] md:text-[32px]">{category}</p>
-        <button className="text-[14px] font-bold">See all</button>
+        <button
+          className="text-[14px] font-bold"
+          onClick={() => navigate(`/category/${encodeURIComponent(category)}`)} // მორგებული კატეგორია
+        >
+          See all
+        </button>
       </div>
       <div className="w-full relative">
         <Swiper
@@ -84,7 +92,7 @@ const Carousel = ({ category }: CarouselProps) => {
         <div className="swiper-button-prev absolute bg-white rounded-full shadow-lg">
           <ArrowForwardIos className="text-black rotate-180" />
         </div>
-        <div className="swiper-button-next absolute  bg-white rounded-full shadow-lg">
+        <div className="swiper-button-next absolute bg-white rounded-full shadow-lg">
           <ArrowForwardIos className="text-black" />
         </div>
       </div>
