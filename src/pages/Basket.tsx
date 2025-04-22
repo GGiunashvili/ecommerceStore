@@ -89,7 +89,7 @@ export default function Basket() {
           </div>
 
           <div className="col-span-12">
-            <Carousel />
+            <Carousel category="" />
           </div>
         </div>
       </div>
