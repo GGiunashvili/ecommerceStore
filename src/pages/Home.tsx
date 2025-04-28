@@ -4,6 +4,7 @@ import MultiBanner from "../components/MultiBanner";
 import DoubleBanner from "../components/DoubleBanner";
 import Authorization from "../components/Authorization";
 import Counter from "../components/Counter";
+import Test from "../components/Test";
 
 export default function Home() {
   return (
@@ -12,6 +13,8 @@ export default function Home() {
       <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto flex gap-y-[40px] flex-col items-center justify-center pt-[20px] mb-[50px] md:mb-[100px]">
         <Counter />
         <Authorization />
+        <Test />
+
         <HiroBannerSlider />
         <MultiBanner />
         <Carousel category="electronics" />
