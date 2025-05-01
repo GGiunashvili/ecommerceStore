@@ -1,20 +1,8 @@
 "use client";
 
-import React from "react";
-
-interface ProfileEditorProps {
-  firstName: string;
-  lastName: string;
-  onFirstNameChange: (newFirstName: string) => void;
-  onLastNameChange: (newLastName: string) => void;
-}
-
-const ProfileEditor: React.FC<ProfileEditorProps> = ({
-  firstName,
-  lastName,
-  onFirstNameChange,
-  onLastNameChange,
-}) => {
+const ProfileEditor = () => {
+  const firstName = "John";
+  const lastName = "Doe";
   return (
     <div style={{ marginTop: "20px" }}>
       <h3>Edit Profile</h3>
@@ -22,13 +10,13 @@ const ProfileEditor: React.FC<ProfileEditorProps> = ({
         type="text"
         placeholder="First Name"
         value={firstName}
-        onChange={(e) => onFirstNameChange(e.target.value)}
+        // onChange={(e) => onFirstNameChange(e.target.value)}
       />
       <input
         type="text"
         placeholder="Last Name"
         value={lastName}
-        onChange={(e) => onLastNameChange(e.target.value)}
+        // onChange={(e) => onLastNameChange(e.target.value)}
       />
     </div>
   );

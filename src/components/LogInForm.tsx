@@ -1,19 +1,22 @@
 import { useState } from "react";
 import { useAuth } from "../components/authContext"; // useAuth import
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const LogInForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const { currentUser, login } = useAuth(); // get context values
-
+  const navigate = useNavigate(); // Initialize navigate function
   const handleLogin = async () => {
     try {
-      await login(username, password); // use login from context
+      await login(username, password); // თუ არ იქნა exception
+      navigate("/profile"); // მაშინ გადადი
     } catch (error) {
-      console.error("Login failed:", (error as Error).message);
+      alert("მომხმარებელი ან პაროლი არასწორია");
     }
   };
+
   console.log(currentUser);
 
   return (

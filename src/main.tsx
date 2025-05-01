@@ -15,7 +15,7 @@ import Basket from "./pages/Basket";
 import ScrollToTop from "./components/ScrollToTop"; // ✅
 import { AuthProvider } from "./components/authContext"; // ✅
 import Favorites from "./pages/Favorites";
-
+import Profile from "./pages/Profile"; // ✅
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +34,7 @@ const router = createBrowserRouter([
       { path: "/detail", element: <Detail /> },
       { path: "/detail/:id", element: <Detail /> },
       { path: "/category", element: <Category /> },
+      { path: "/profile", element: <Profile /> },
       { path: "/favorites", element: <Favorites /> },
       { path: "/category/:id", element: <Category /> },
       { path: "/basket", element: <Basket /> },

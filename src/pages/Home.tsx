@@ -5,6 +5,7 @@ import DoubleBanner from "../components/DoubleBanner";
 import Authorization from "../components/Authorization";
 import Counter from "../components/Counter";
 import LogInForm from "../components/LogInForm";
+import ProfileEditor from "../components/ProfileEditor";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Counter />
         <Authorization /> {/* AuthProvider უნდა იყოს გადაფარებული */}
         <LogInForm />
+        <ProfileEditor />
         <HiroBannerSlider />
         <MultiBanner />
         <Carousel category="electronics" />

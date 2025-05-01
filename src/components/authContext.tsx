@@ -10,13 +10,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [currentUser, setCurrentUser] = useState();
-  // useEffect(() => {
-  //   const accessToken = localStorage.getItem("accessToken");
-  //   const refreshToken = localStorage.getItem("refreshToken");
-  //   if (accessToken && refreshToken) {
-  //     setCurrentUser({ accessToken, refreshToken });
-  //   }
-  // }
+
   const login = async (username: string, password: string) => {
     try {
       const response = await fetch("https://dati.pythonanywhere.com/login/", {
@@ -26,6 +20,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         },
         body: JSON.stringify({ username, password }),
       });
+
+      if (!response.ok) {
+        throw new Error("Invalid credentials");
+      }
+
       const data = await response.json();
       localStorage.setItem("accessToken", data.acsses);
       localStorage.setItem("refreshToken", data.refresh);
@@ -33,15 +32,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setCurrentUser(data);
     } catch (error) {
       console.error("Login failed:", (error as Error).message);
+      throw error; // ⚠️ ეს აუცილებელია, რომ კომპონენტში ჩაჭრა იმუშაოს
     }
   };
-
-  // const logout = () => {
-  //   setAccessToken("");
-  //   setRefreshToken("");
-  //   setFirstName("");
-  //   setLastName("");
-  // };
 
   return (
     <AuthContext.Provider value={{ currentUser, login }}>
