@@ -10,7 +10,11 @@ import SubHeader from "./SubHeader";
 import BasketCounter from "./BasketCounter";
 import { useSelector } from "react-redux";
 import type { RootState } from "../store/store";
+import { useAuth } from "../components/authContext"; // useAuth import
+
 export default function Header() {
+  const { currentUser } = useAuth(); // get context values
+
   const [searchTerm, setSearchTerm] = useState("");
 
   const counterValue = useSelector((state: RootState) => state.counter.value);
@@ -55,7 +59,7 @@ export default function Header() {
           {/* Navigation */}
           <div className="w-full md:w-auto flex justify-around md:justify-between items-center gap-x-[28px] md:gap-x-[32px] h-12 py-[4px]">
             <Link
-              to="/Favorites"
+              to="/favorites"
               className="relative flex justify-center md:justify-between items-center flex-col md:text-black font-light h-full"
             >
               <FavoriteBorder style={{ fontSize: "24px" }} />{" "}
@@ -84,6 +88,7 @@ export default function Header() {
                 Login
               </p>
             </a>
+            <p className="text-black">hello {currentUser?.username}</p>
           </div>
         </div>
         <div className="px-[16px] w-full flex md:hidden items-center overflow-hidden mb-[12px]">

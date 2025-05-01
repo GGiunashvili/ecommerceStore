@@ -12,9 +12,8 @@ export default function Home() {
       {/* mt-[100px]  */}
       <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto flex gap-y-[40px] flex-col items-center justify-center pt-[20px] mb-[50px] md:mb-[100px]">
         <Counter />
-        <Authorization />
+        <Authorization /> {/* AuthProvider უნდა იყოს გადაფარებული */}
         <Test />
-
         <HiroBannerSlider />
         <MultiBanner />
         <Carousel category="electronics" />

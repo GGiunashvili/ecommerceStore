@@ -7,6 +7,7 @@ import DetailHeader from "../components/DetailHeader";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../components/authContext"; // useAuth import
 
 type Product = {
   id: number;
@@ -28,6 +29,8 @@ type Product = {
 };
 
 export default function Detail() {
+  const { currentUser } = useAuth(); // get context values
+
   const { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null); // აი აქ გვაქვს null-ის ვარიანტი
 
@@ -56,7 +59,10 @@ export default function Detail() {
   return (
     <>
       <div className="w-full max-w-[1200px] grid grid-cols-12 sm:gap-x-[20px] lg:gap-x-[90px] mx-auto px-[16px] md:px-[32px] pt-[20px] mb-[50px] md:mb-[100px]">
+        <p>hello {currentUser?.username}</p>
+
         <DetailHeader product={product} />
+
         <div className="col-span-12 md:col-span-8">
           <div className="flex flex-col md:flex-row gap-x-[20px]">
             <DetailCarousel product={product} />
