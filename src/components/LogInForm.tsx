@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../components/authContext"; // useAuth import
 
-const Test = () => {
+const LogInForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -38,4 +38,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default LogInForm;
