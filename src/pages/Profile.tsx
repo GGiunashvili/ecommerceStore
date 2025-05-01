@@ -8,7 +8,7 @@ export default function Profile() {
       <div className="col-span-12">
         <h1 className="text-2xl font-bold mb-4">User Profile</h1>
         <p className="text-lg">Welcome to your profile page!</p>
-        <p className="text-black">hello {currentUser?.phone_number}</p>
+        <p className="text-black">hello {currentUser?.username}</p>
       </div>
     </div>
   );
