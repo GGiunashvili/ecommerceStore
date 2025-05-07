@@ -1,4 +1,4 @@
-import { useAuth } from "../components/authContext"; // useAuth import
+import { useAuth } from "../components/auth/authContext"; // useAuth import
 
 export default function Profile() {
   const { currentUser } = useAuth(); // get context values

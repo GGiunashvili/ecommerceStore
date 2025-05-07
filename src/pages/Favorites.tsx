@@ -1,6 +1,6 @@
 import { Delete } from "@mui/icons-material";
 // import ProductCard from "../components/ProductCard";
-import { useAuth } from "../components/authContext"; // useAuth import
+import { useAuth } from "../components/auth/authContext"; // useAuth import
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 export default function Favorites() {

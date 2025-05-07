@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Basket from "./pages/Basket";
 import ScrollToTop from "./components/ScrollToTop"; // ✅
-import { AuthProvider } from "./components/authContext"; // ✅
+import { AuthProvider } from "./components/auth/authContext"; // ✅
 import Favorites from "./pages/Favorites";
 import Profile from "./pages/Profile"; // ✅
 const router = createBrowserRouter([

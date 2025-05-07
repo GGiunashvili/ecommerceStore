@@ -4,7 +4,7 @@ import MultiBanner from "../components/MultiBanner";
 import DoubleBanner from "../components/DoubleBanner";
 import Authorization from "../components/Authorization";
 import Counter from "../components/Counter";
-import LogInForm from "../components/LogInForm";
+import LogInForm from "../components/auth/LogInForm";
 import ProfileEditor from "../components/ProfileEditor";
 
 export default function Home() {

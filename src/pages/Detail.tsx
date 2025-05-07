@@ -7,7 +7,7 @@ import DetailHeader from "../components/DetailHeader";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { useAuth } from "../components/authContext"; // useAuth import
+import { useAuth } from "../components/auth/authContext"; // useAuth import
 
 type Product = {
   id: number;

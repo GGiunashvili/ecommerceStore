@@ -10,7 +10,7 @@ import SubHeader from "./SubHeader";
 import BasketCounter from "./BasketCounter";
 import { useSelector } from "react-redux";
 import type { RootState } from "../store/store";
-import { useAuth } from "../components/authContext"; // useAuth import
+import { useAuth } from "./auth/authContext"; // useAuth import
 
 export default function Header() {
   const { currentUser } = useAuth(); // get context values

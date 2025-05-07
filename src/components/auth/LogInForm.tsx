@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../components/authContext"; // useAuth import
+import { useAuth } from "./authContext"; // useAuth import
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const LogInForm = () => {
