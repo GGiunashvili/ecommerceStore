@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 
 interface AuthContextType {
   currentUser: any;
@@ -10,7 +16,31 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [currentUser, setCurrentUser] = useState();
+  useEffect(() => {
+    fetchCurrentUser();
+  }, []);
 
+  const fetchCurrentUser = async () => {
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken) {
+      try {
+        const response = await fetch("https://dati.pythonanywhere.com/me/", {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch user data");
+        }
+
+        const data = await response.json();
+        setCurrentUser(data);
+      } catch (error) {
+        console.error("Error fetching user data:", (error as Error).message);
+      }
+    }
+  };
   const login = async (username: string, password: string) => {
     try {
       const response = await fetch("https://dati.pythonanywhere.com/login/", {
