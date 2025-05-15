@@ -9,16 +9,17 @@ import {
 interface AuthContextType {
   currentUser: any;
   login: (username: string, password: string) => Promise<void>;
-  // logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState<any>(null);
+  const [tokenUpdated, setTokenUpdated] = useState(false); // ახალი სტეიტი
+
   useEffect(() => {
     fetchCurrentUser();
-  }, []);
+  }, [tokenUpdated]); // როცა token შეიცვლება, თავიდან გამოიძახე
 
   const fetchCurrentUser = async () => {
     const accessToken = localStorage.getItem("accessToken");
@@ -41,6 +42,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
     }
   };
+
   const login = async (username: string, password: string) => {
     try {
       const response = await fetch("https://dati.pythonanywhere.com/login/", {
@@ -59,10 +61,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       localStorage.setItem("accessToken", data.acsses);
       localStorage.setItem("refreshToken", data.refresh);
 
-      setCurrentUser(data);
+      setTokenUpdated((prev) => !prev); // ტოკენის განახლება გამოიწვევს useEffect-ს
+
+      // არ გვინდა აქვე setCurrentUser(data), იმიტომ რომ მონაცემი `/me/`-დან მოდის
     } catch (error) {
       console.error("Login failed:", (error as Error).message);
-      throw error; // ⚠️ ეს აუცილებელია, რომ კომპონენტში ჩაჭრა იმუშაოს
+      throw error;
     }
   };
 

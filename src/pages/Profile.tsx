@@ -1,15 +1,27 @@
-import { useAuth } from "../components/auth/authContext"; // useAuth import
+"use client";
 
-export default function Profile() {
-  const { currentUser } = useAuth(); // get context values
+import { useAuth } from "../components/auth/authContext";
+import LogInForm from "../components/auth/LogInForm";
+const UserProfile = () => {
+  const { currentUser } = useAuth();
 
   return (
     <div className="w-full max-w-[1200px] px-[16px] md:px-[32px] mx-auto grid grid-cols-12 gap-x-[20px] gap-y-[120px] pt-[20px] mb-[50px] md:mb-[100px]">
-      <div className="col-span-12">
-        <h1 className="text-2xl font-bold mb-4">User Profile</h1>
-        <p className="text-lg">Welcome to your profile page!</p>
-        <p className="text-black">hello {currentUser?.username}</p>
+      <div className="col-span-12 text-center">
+        {!currentUser ? (
+          <>
+            <p className="text-center py-10">გაიარეთ ავტორიზაცია</p>
+            <LogInForm />
+          </>
+        ) : (
+          <>
+            <h2>მომხმარებელი: {currentUser.username}</h2>
+            <p>ტელეფონის ნომერი: {currentUser.phone_number}</p>
+          </>
+        )}
       </div>
     </div>
   );
-}
+};
+
+export default UserProfile;

@@ -36,7 +36,7 @@ export default function SubHeader() {
 
   return (
     <div className="text-black">
-      <ul className="flex gap-x-[60px] justify-start md:justify-center items-center overflow-scroll mx-[16px]">
+      <ul className="flex gap-x-[60px] justify-start md:justify-center items-center overflow-scroll mx-[16px] min-h-[24px]">
         {categories.map((category, index) => (
           <li
             key={index}

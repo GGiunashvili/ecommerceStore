@@ -11,8 +11,11 @@ import BasketCounter from "./BasketCounter";
 import { useSelector } from "react-redux";
 import type { RootState } from "../store/store";
 import { useAuth } from "./auth/authContext"; // useAuth import
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate(); // 👉 აქ უნდა გამოიძახო ჰუკი
+
   const { currentUser } = useAuth(); // get context values
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -88,7 +91,12 @@ export default function Header() {
                 Login
               </p>
             </a>
-            <p className="text-black">hello {currentUser?.username}</p>
+            <p
+              onClick={() => navigate("/profile")}
+              className="text-black w-[100px]"
+            >
+              X {currentUser?.username}
+            </p>
           </div>
         </div>
         <div className="px-[16px] w-full flex md:hidden items-center overflow-hidden mb-[12px]">
