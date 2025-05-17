@@ -1,5 +1,7 @@
 "use client";
 
+import BasketUpdater from "../components/BasketUpdater";
+
 import { useAuth } from "../components/auth/authContext";
 import LogInForm from "../components/auth/LogInForm";
 const UserProfile = () => {
@@ -17,6 +19,7 @@ const UserProfile = () => {
           <>
             <h2>მომხმარებელი: {currentUser.username}</h2>
             <p>ტელეფონის ნომერი: {currentUser.phone_number}</p>
+            <BasketUpdater />
           </>
         )}
       </div>
