@@ -4,6 +4,7 @@ import BasketUpdater from "../components/BasketUpdater";
 
 import { useAuth } from "../components/auth/authContext";
 import LogInForm from "../components/auth/LogInForm";
+import ClearBasketButton from "../components/ClearBasketButton";
 const UserProfile = () => {
   const { currentUser } = useAuth();
 
@@ -20,6 +21,7 @@ const UserProfile = () => {
             <h2>მომხმარებელი: {currentUser.username}</h2>
             <p>ტელეფონის ნომერი: {currentUser.phone_number}</p>
             <BasketUpdater />
+            <ClearBasketButton />
           </>
         )}
       </div>
