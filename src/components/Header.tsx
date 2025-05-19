@@ -19,7 +19,11 @@ export default function Header() {
   const { currentUser } = useAuth(); // get context values
 
   const [searchTerm, setSearchTerm] = useState("");
-
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    // თუ გინდა რედირექცია ლოგინზე
+    window.location.href = "/login";
+  };
   const counterValue = useSelector((state: RootState) => state.counter.value);
 
   return (
@@ -82,21 +86,23 @@ export default function Header() {
                 <BasketCounter />
               </div>
             </Link>
-            <a
-              href="#"
-              className="flex flex-col md:flex-row-reverse items-center md:text-black font-medium md:font-bold md:border md:py-[12px] md:px-[16px] md:rounded-[12px]"
-            >
-              <PermIdentity style={{ fontSize: "24px" }} /> {/* User Icon */}
-              <p className="text-[10px] md:text-[14px] md:mr-[8px] md:text-black">
-                Login
-              </p>
-            </a>
             <p
-              onClick={() => navigate("/profile")}
-              className="text-black w-[100px]"
+              onClick={() => {
+                navigate("/profile");
+              }}
+              className="flex flex-col text-white md:text-black text-[12px] items-center cursor-pointer"
             >
-              X {currentUser?.username}
+              <PermIdentity style={{ fontSize: "24px" }} />
+              {currentUser ? `${currentUser?.username}` : "Login"}
             </p>
+            {currentUser && (
+              <button
+                onClick={handleLogout}
+                className="p-2 bg-red-500 text-white rounded"
+              >
+                Logout
+              </button>
+            )}
           </div>
         </div>
         <div className="px-[16px] w-full flex md:hidden items-center overflow-hidden mb-[12px]">
